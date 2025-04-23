@@ -149,3 +149,33 @@ img {
     flex-shrink: 1;
     flex-basis: auto;
 }
+
+.eye-icon {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+
+.hide-text {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    font-family: var(--font-family-poppins);
+    font-weight: normal;
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: none;
+    color: var(--text-rgb-2);
+}
+
+.forgot-password {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    font-family: var(--font-family-poppins);
+    font-weight: normal;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: none;
+    color: var(--text-rgb-1);
+}
