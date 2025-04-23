@@ -24,7 +24,7 @@ function About() {
                         </div>
                         <div class="mission">
                             <p class="mission-title"><span class="text-black">Our mission</span></p>
-                            <p class="mission-body"><span class="text-black">Once our overlord Anatolijs <b>Z.</b> gave us some bread and told us to work. So we started making a nursery website. To tame every poor animal and give happiness to people!</span></p>
+                            <p class="mission-body"><span class="text-black">Once our overlord Anatolijs <b class="anatolijs">Z.</b> gave us some bread and told us to work. So we started making a nursery website. To tame every poor animal and give happiness to people!</span></p>
                         </div>
                     </div>
                     <div class="mark-avatar">

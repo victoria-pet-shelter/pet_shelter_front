@@ -193,3 +193,8 @@ img {
     flex-basis: auto;
     background-color: rgba(255, 255, 255, 1);
 }
+
+.anatolijs {
+    font-size: 72px;
+    font-weight: 1000;
+}
