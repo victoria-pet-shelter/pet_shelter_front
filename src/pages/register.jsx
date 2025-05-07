@@ -2,7 +2,7 @@ import './register.css';
 import React, { useState } from 'react';
 
 function Register() {
-    const [formData, setFormData] = useState({ name: '', password: '' });
+    const [formData, setFormData] = useState({ username: '', name: '', password: '' });
     const [message, setMessage] = useState('');
 
     const handleChange = (e) => {
@@ -20,12 +20,7 @@ function Register() {
 
         const data = await response.json();
         if (response.ok) {
-            const exists = data.some(user => user.name === formData.name && user.password === formData.password);
-            if (exists) {
             setMessage("User registered successfully!");
-            } else {
-            setMessage("Error registering user.");
-            }
         } else {
             setMessage("Error registering user.");
         }
@@ -51,10 +46,27 @@ function Register() {
                                 <div class="register-title">
                                     <p class="welcome-title"><span class="text-rgb-1">Welcome to Pet Shelter</span></p>
                                     <div className="node">
-                                        <p class="welcome-subtitle"><span class="text-rgb-1">Login. No account? <a href="/register">Register</a></span></p>
+                                        <p class="welcome-subtitle"><span class="text-rgb-1">Already have an account? <a href="/login">Login</a></span></p>
                                     </div>
                                 </div>
-
+                                <div className="registation-form">
+                                    <img src="./images/squares.svg" className="squares" alt="Squares" />
+                                    <div className="main-frame">
+                                        <div className="text-field">
+                                            <span class="text-rgb-2"><input type="text" name="email" class="input-field" value={formData.name} onChange={handleChange} placeholder="E-mail" /></span>
+                                        </div>
+                                        <div className="text-field">
+                                            <span class="text-rgb-2"><input type="password" name="password" class="input-field" value={formData.password} onChange={handleChange} placeholder="Password" /></span>
+                                            <div className="password-hide-toggle">
+                                                <div className="eye-icon">
+                                                    <img src="./images/eye.svg" className="eye" alt="Eye" />
+                                                </div>
+                                                <p class="hide-text"><span class="text-rgb-1">Hide</span></p>
+                                            </div>
+                                            <p class="forgot-password"><span class="text-rgb-1">Forgot password?</span></p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
