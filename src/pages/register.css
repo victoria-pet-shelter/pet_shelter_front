@@ -74,3 +74,35 @@ img {
     flex-shrink: 1;
     flex-basis: auto;
 }
+
+.register-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2px;
+    padding: 0px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+
+.text-field {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    border: 1px solid rgba(102, 102, 102, 0.35);
+    border-radius: 12px;
+}
+
+.input-field {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    font-family: var(--font-family-poppins);
+    font-weight: normal;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: none;
+    color: var(--text-rgb-2);
+}
