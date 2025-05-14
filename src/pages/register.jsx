@@ -1,5 +1,6 @@
 import './register.css';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Register() {
     const [formData, setFormData] = useState({ username: '', name: '', password: '' });
@@ -12,20 +13,20 @@ function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-        const response = await fetch("http://localhost:8080/users", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData),
-        });
+            const response = await fetch("http://localhost:5000/users", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
 
-        const data = await response.json();
-        if (response.ok) {
-            setMessage("User registered successfully!");
-        } else {
-            setMessage("Error registering user.");
-        }
+            const data = await response.json();
+            if (response.ok) {
+                setMessage("User registered successfully!");
+            } else {
+                setMessage("Error registering user.");
+            }
         } catch (error) {
-        setMessage("Request failed: " + error);
+            setMessage("Request failed: " + error);
         }
     };
 
@@ -52,19 +53,23 @@ function Register() {
                                 <div className="registation-form">
                                     <img src="./images/squares.svg" className="squares" alt="Squares" />
                                     <div className="main-frame">
-                                        <div className="text-field">
-                                            <span class="text-rgb-2"><input type="text" name="email" class="input-field" value={formData.name} onChange={handleChange} placeholder="E-mail" /></span>
-                                        </div>
-                                        <div className="text-field">
-                                            <span class="text-rgb-2"><input type="password" name="password" class="input-field" value={formData.password} onChange={handleChange} placeholder="Password" /></span>
-                                            <div className="password-hide-toggle">
-                                                <div className="eye-icon">
-                                                    <img src="./images/eye.svg" className="eye" alt="Eye" />
-                                                </div>
-                                                <p class="hide-text"><span class="text-rgb-1">Hide</span></p>
+                                        <form onSubmit={handleSubmit}>
+                                            <div className="text-field">
+                                                <span class="text-rgb-2"><input type="email" name="username" class="input-field" value={formData.username} onChange={handleChange} placeholder="E-mail" /></span>
                                             </div>
-                                            <p class="forgot-password"><span class="text-rgb-1">Forgot password?</span></p>
-                                        </div>
+                                            <div className="text-field">
+                                                <span class="text-rgb-2"><input type="password" name="password" class="input-field" value={formData.password} onChange={handleChange} placeholder="Password" /></span>
+                                                <div className="password-hide-toggle">
+                                                    <div className="eye-icon">
+                                                        <img src="./images/eye.svg" className="eye" alt="Eye" />
+                                                    </div>
+                                                    <p class="hide-text"><span class="text-rgb-1">Hide</span></p>
+                                                </div>
+                                                <p class="forgot-password"><span class="text-rgb-1">Forgot password?</span></p>
+                                            </div>
+                                            <button className="register-button" type="submit">Create an account</button>
+                                            {message && <p className="message">{message}</p>}
+                                        </form>
                                     </div>
                                 </div>
                             </div>

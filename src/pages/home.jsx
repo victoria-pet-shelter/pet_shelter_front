@@ -44,7 +44,7 @@ function Home() {
           <p class="text-11"><span class="text-black">News and Articles</span></p>
           <p class="text-12"><span class="text-black">Stay updated with our latest news and pet care advice.</span></p>
           <p class="text-13"><span class="text-black">📰</span></p>
-          <p class="text-14"><span class="text-black">New Adoption Policies</span></p>
+          <p class="text-12"><span class="text-black">New Adoption Policies</span></p>
           <p class="text-15"><span class="text-black">Learn about our updated procedures</span></p>
           <p class="text-16"><span class="text-black">Nov 12, 2022</span></p>
           <p class="text-17"><span class="text-black">🐾</span></p>

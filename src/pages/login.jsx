@@ -55,19 +55,23 @@ function Login() {
             <div className="login-form">
                 <img src="./images/squares.svg" className="squares" alt="Squares" />
                 <div className="main-frame">
-                    <div className="text-field">
-                        <span class="text-rgb-2"><input type="text" name="email" class="input-field" value={formData.name} onChange={handleChange} placeholder="E-mail" /></span>
-                    </div>
-                    <div className="text-field">
-                        <span class="text-rgb-2"><input type="password" name="password" class="input-field" value={formData.password} onChange={handleChange} placeholder="Password" /></span>
-                        <div className="password-hide-toggle">
-                            <div className="eye-icon">
-                                <img src="./images/eye.svg" className="eye" alt="Eye" />
-                            </div>
-                            <p class="hide-text"><span class="text-rgb-1">Hide</span></p>
+                    <form onSubmit={handleSubmit}>
+                        <div className="text-field">
+                            <span class="text-rgb-2"><input type="email" name="email" class="input-field" value={formData.name} onChange={handleChange} placeholder="E-mail" /></span>
                         </div>
-                        <p class="forgot-password"><span class="text-rgb-1">Forgot password?</span></p>
-                    </div>
+                        <div className="text-field">
+                            <span class="text-rgb-2"><input type="password" name="password" class="input-field" value={formData.password} onChange={handleChange} placeholder="Password" /></span>
+                            <div className="password-hide-toggle">
+                                <div className="eye-icon">
+                                    <img src="./images/eye.svg" className="eye" alt="Eye" />
+                                </div>
+                                <p class="hide-text"><span class="text-rgb-1">Hide</span></p>
+                            </div>
+                            <p class="forgot-password"><span class="text-rgb-1">Forgot password?</span></p>
+                        </div>
+                        <button className="login-button" type="submit">Log in</button>
+                        {message && <p className="message">{message}</p>}
+                    </form>
                 </div>
             </div>
         </div>
