@@ -17,21 +17,21 @@ function About() {
                         <div class="frame-1"></div>
                         <div class="alan-avatar">
                             <div class="group">
-                                <img src="./images/alan.png" class="alan" alt="Alan Arzumanyan" />
+                                <img src="../images/about/gigachad.jpg" class="alan" alt="Alan Arzumanyan" />
                                 <p class="name"><span class="text-black">Alans Arzumanjans</span></p>
                                 <p class="role"><span class="text-black">Galvenais sigma progrāmetājs</span></p>
                             </div>
                         </div>
                         <div class="mission">
                             <p class="mission-title"><span class="text-black">Our mission</span></p>
-                            <p class="mission-body"><span class="text-black">Once our overlord Anatolijs Z. gave us some bread and told us to work. So we started making a nursery website. To tame every poor animal and give happiness to people!</span></p>
+                            <p class="mission-body"><span class="text-black">Once our overlord Anatolijs Z. gave us some bread and told us to work. So we started making a pet shelter website. To tame every poor animal and give happiness to people!</span></p>
                         </div>
                     </div>
                     <div class="mark-avatar">
                         <div class="node-1">
                             <div class="group">
                                 <p class="name"><span class="text-black">Mark Korobkin</span></p>
-                                <img src="./images/mark.png" class="mark" alt="Mark Korobkin" />
+                                <img src="./images/about/mark.png" class="mark" alt="Mark Korobkin" />
                                 <p class="role"><span class="text-black">Direktors</span></p>
                             </div>
                         </div>
