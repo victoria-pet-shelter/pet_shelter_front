@@ -13,7 +13,7 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-        const response = await fetch("http://localhost:8080/users", {
+        const response = await fetch("http://localhost:5000/users", {
             method: "GET",
             headers: { "Content-Type": "application/json" },
             // body: JSON.stringify(formData),

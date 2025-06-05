@@ -85,7 +85,7 @@ function Home() {
             </div>
             <p class="review"><span class="text-black">Great selection of animals and excellent service.</span></p>
           </div>
-          <div class="user-3">
+          <div class="user-1">
             <div class="avatar-frame">
               <div class="avatar-3"></div>
             </div>
@@ -130,11 +130,11 @@ function Home() {
         </div>
         <div class="footer-3">
           <div class="sub-footer">
-            <p class="text-32"><span class="text-black">© 2025 Pet Adoption Center. All Rights Reserved.</span></p>
-            <p class="text-32"><span class="text-black">Privacy Policy</span></p>
-            <p class="text-32"><span class="text-black">Terms of Service</span></p>
-            <a href="/about"><p class="text-32"><span class="text-black">About us</span></p></a>
-            <a href="/contact"><p class="text-32"><span class="text-black">Contacts</span></p></a>
+            <p class="text-footer"><span class="text-black">© 2025 Pet Adoption Center. All Rights Reserved.</span></p>
+            <p class="text-footer"><span class="text-black">Privacy Policy</span></p>
+            <p class="text-footer"><span class="text-black">Terms of Service</span></p>
+            <a href="/about"><p class="text-footer"><span class="text-black">About us</span></p></a>
+            <a href="/contact"><p class="text-footer"><span class="text-black">Contacts</span></p></a>
           </div>
         </div>
       </div>
