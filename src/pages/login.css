@@ -136,6 +136,8 @@ img {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
+    position: relative;
+    width: 25%;
 }
 
 .text-field {
@@ -195,3 +197,8 @@ img {
     font-size: 1rem;
     margin-bottom: 2vh;
   }
+
+.squares {
+    position: absolute;
+    right: 0;
+}

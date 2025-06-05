@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./login.css";
 import { data, Link } from 'react-router-dom';
+import squaresImage from '../images/squares.svg';
 
 function Login() {
     const [formData, setFormData] = useState({ name: '', password: '' });
@@ -53,7 +54,7 @@ function Login() {
                 </div>
             </div>
             <div className="login-form">
-                <img src="./images/squares.svg" className="squares" alt="Squares" />
+                <img src={squaresImage} className="squares" alt="Squares" />
                 <div className="main-frame">
                     <form onSubmit={handleSubmit}>
                         <div className="text-field">

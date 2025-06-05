@@ -1,4 +1,5 @@
 import './home.css';
+import dogsImage from '../images/home/dogs.jpg';
 
 function Home() {
   return (
@@ -8,7 +9,7 @@ function Home() {
         <div class="news-frame">
           <div class="rectangle-1"></div>
           <p class="text-23"><span class="text-black">Welcome to the Pet Center</span></p>
-          <img src="./images/node.png" class="node-2" alt="Dogs" />
+          <img src={dogsImage} class="node-2" alt="Dogs" />
           <p class="text-24"><span class="text-black">Every year, the following come to “Big
           Homes”:</span></p>
           <div class="dogcount">
@@ -20,12 +21,8 @@ function Home() {
             </div>
           </div>
           <div class="button">
-            <div class="secondary">
-              <a href="/register"><p class="text-29"><span class="text-black">Register</span></p></a>
-            </div>
-            <div class="primary">
-              <a href="/login"><p class="text-30"><span class="text-black">Login</span></p></a>
-            </div>
+            <a href="/register"><button class="secondary"><span class="text-black">Register</span></button></a>
+            <a href="/login"><button class="primary"><span class="text-black">Login</span></button></a>
           </div>
           <div class="decoration-2"></div>
           <div class="decoration-2"></div>
