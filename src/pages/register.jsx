@@ -1,6 +1,8 @@
 import './register.css';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import squaresImage from '../images/squares.svg';
+import eyeImage from '../images/eye.svg';
 
 function Register() {
     const [formData, setFormData] = useState({ username: '', name: '', password: '' });
@@ -38,7 +40,7 @@ function Register() {
             <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
             <div class="register-frame">
                 <div class="squares">
-                    <img src="./images/squares.svg" class="squares" alt="Squares" />
+                    <img src={squaresImage} class="squares" alt="Squares" />
                 </div>
                 <div class="sidebar">
                     <div class="sign-up">
@@ -61,7 +63,7 @@ function Register() {
                                                 <span class="text-rgb-2"><input type="password" name="password" class="input-field" value={formData.password} onChange={handleChange} placeholder="Password" /></span>
                                                 <div className="password-hide-toggle">
                                                     <div className="eye-icon">
-                                                        <img src="./images/eye.svg" className="eye" alt="Eye" />
+                                                        <img src={eyeImage} className="eye" alt="Eye" />
                                                     </div>
                                                     <p class="hide-text"><span class="text-rgb-1">Hide</span></p>
                                                 </div>

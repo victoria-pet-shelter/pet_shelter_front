@@ -1,4 +1,6 @@
 import './about.css';
+import gigachad from '../images/about/gigachad.jpg';
+import markImage from '../images/about/mark.png';
 
 function About() {
     return (
@@ -17,7 +19,7 @@ function About() {
                         <div class="frame-1"></div>
                         <div class="alan-avatar">
                             <div class="group">
-                                <img src="../images/about/gigachad.jpg" class="alan" alt="Alan Arzumanyan" />
+                                <img src={gigachad} class="alan" alt="Alan Arzumanyan" />
                                 <p class="name"><span class="text-black">Alans Arzumanjans</span></p>
                                 <p class="role"><span class="text-black">Galvenais sigma progrāmetājs</span></p>
                             </div>
@@ -31,7 +33,7 @@ function About() {
                         <div class="node-1">
                             <div class="group">
                                 <p class="name"><span class="text-black">Mark Korobkin</span></p>
-                                <img src="./images/about/mark.png" class="mark" alt="Mark Korobkin" />
+                                <img src={markImage} class="mark" alt="Mark Korobkin" />
                                 <p class="role"><span class="text-black">Direktors</span></p>
                             </div>
                         </div>

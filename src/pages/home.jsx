@@ -1,5 +1,11 @@
 import './home.css';
 import dogsImage from '../images/home/dogs.jpg';
+import starsImage from '../images/home/stars.svg';
+import facebookLogo from '../images/home/facebook.png';
+import twitterLogo from '../images/home/twitter.png';
+import vimeoLogo from '../images/home/vimeo.png';
+import brightnessSwitch from '../images/home/brightness.svg';
+import lightIcon from '../images/home/light.svg';
 
 function Home() {
   return (
@@ -66,7 +72,7 @@ function Home() {
               <p class="name-text"><span class="text-black">Jessica</span></p>
             </div>
             <div class="user-stars">
-              <img src="./images/stars.svg" class="stars" alt="Stars" />
+              <img src={starsImage} class="stars" alt="Stars" />
             </div>
             <p class="review"><span class="text-black">I adopted my best friend from here! Such a wonderful experience.</span></p>
           </div>
@@ -78,7 +84,7 @@ function Home() {
               <p class="name-text"><span class="text-black">Michael</span></p>
             </div>
             <div class="user-stars">
-              <img src="./images/stars.svg" class="stars" alt="Stars" />
+              <img src={starsImage} class="stars" alt="Stars" />
             </div>
             <p class="review"><span class="text-black">Great selection of animals and excellent service.</span></p>
           </div>
@@ -90,7 +96,7 @@ function Home() {
               <p class="name-text"><span class="text-black">Emily</span></p>
             </div>
             <div class="user-stars">
-              <img src="./images/stars.svg" class="stars" alt="Stars" />
+              <img src={starsImage} class="stars" alt="Stars" />
             </div>
             <p class="review"><span class="text-black">Couldn't be happier with my new furry companion.</span></p>
           </div>
@@ -98,9 +104,9 @@ function Home() {
         <div class="switch">
           <div class="switch-2"></div>
           <div class="bright-switch">
-            <img src="./images/switch.svg" class="bright" alt="Brightness" />
+            <img src={brightnessSwitch} class="bright" alt="Brightness" />
             <div class="light-ic">
-              <img src="./images/light.svg" class="light" alt="Light" />
+              <img src={lightIcon} class="light" alt="Light" />
             </div>
           </div>
         </div>
@@ -120,9 +126,9 @@ function Home() {
           <div class="footer-2">
             <hr />
             <div class="node-1">
-              <img src="./images/facebook.png" class="facebook" alt="Facebook" />
-              <img src="./images/twitter.png" class="twitter"  alt="Twitter" />
-              <img src="./images/vimeo.png" class="vimeo" alt="Vimeo" />
+              <img src={facebookLogo} class="facebook" alt="Facebook" />
+              <img src={twitterLogo} class="twitter"  alt="Twitter" />
+              <img src={vimeoLogo} class="vimeo" alt="Vimeo" />
           </div>
         </div>
         <div class="footer-3">
