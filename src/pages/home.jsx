@@ -1,9 +1,10 @@
 import './home.css';
-import dogsImage from '../images/home/dogs.jpg';
+import dogsImage from '../../assets/home/dog.jpg';
 
 function Home() {
   return (
     <div className="App">
+      <link href="https://fonts.googleapis.com/css?family=Roboto|Inter|Poppins&display=swap" rel="stylesheet" />
       <div class="home">
         <title>Pet Shelter</title>
         <div class="news-frame">

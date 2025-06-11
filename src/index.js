@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+<<<<<<< Updated upstream
 import './index.css';
+=======
+import './styles/index.css';
+>>>>>>> Stashed changes
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 // import reportWebVitals from './reportWebVitals';
