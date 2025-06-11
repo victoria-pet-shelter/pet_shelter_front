@@ -1,6 +1,7 @@
 import './register.css';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import squaresImage from '../../assets/log-reg/squares.svg';
 
 function Register() {
     const [formData, setFormData] = useState({ username: '', name: '', password: '' });
@@ -38,7 +39,7 @@ function Register() {
             <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
             <div class="register-frame">
                 <div class="squares">
-                    <img src="./images/squares.svg" class="squares" alt="Squares" />
+                    <img src={squaresImage} class="squares" alt="Squares" />
                 </div>
                 <div class="sidebar">
                     <div class="sign-up">
