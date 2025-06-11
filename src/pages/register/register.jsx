@@ -1,6 +1,5 @@
 import './register.css';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 function Register() {
     const [formData, setFormData] = useState({ username: '', name: '', password: '' });
@@ -19,7 +18,6 @@ function Register() {
                 body: JSON.stringify(formData),
             });
 
-            const data = await response.json();
             if (response.ok) {
                 setMessage("User registered successfully!");
             } else {

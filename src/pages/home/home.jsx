@@ -1,17 +1,16 @@
 import './home.css';
-import dogsImage from '../images/home/dogs.jpg';
+import dogsImage from '../../assets/home/dogs.jpg';
 
 function Home() {
   return (
     <div className="App">
       <div class="home">
-        <title>Pet Shelter</title>
+        <title>Pet Center</title>
         <div class="news-frame">
           <div class="rectangle-1"></div>
           <p class="text-23"><span class="text-black">Welcome to the Pet Center</span></p>
           <img src={dogsImage} class="node-2" alt="Dogs" />
-          <p class="text-24"><span class="text-black">Every year, the following come to “Big
-          Homes”:</span></p>
+          <p class="text-24"><span class="text-black">Every year, the following come to “BigHomes”:</span></p>
           <div class="dogcount">
             <p class="text-25"><span class="text-black">69</span></p>
             <p class="text-26"><span class="text-black">dogs</span></p>

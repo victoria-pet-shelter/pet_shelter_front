@@ -6,6 +6,7 @@ import Contact from './Contact';
 import NotFound from './NotFound';
 import Header from './Header';
 import Footer from './Footer';
+
 const AppRoutes = () => {
   return (
     <Router>

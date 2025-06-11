@@ -46,20 +46,16 @@
 - Section with news about the nursery, advice on caring for animals
 - Ability to filter articles by topic
 
-8. Gallery
-- Photos of animals in the nursery
-- Before and after (for example, photos before adoption and after)
-
-9. Reviews
+8. Reviews
 - Block with user reviews
 - Form for adding a new review (only for registered users)
 
-10. Contacts
+9. Contacts
 - Map with the location of the nursery
 - Phone, email, social networks
 - Opening hours
 
-11. About us
+10. About us
 - History of the nursery
 - Photos of employees
 - Mission and values
