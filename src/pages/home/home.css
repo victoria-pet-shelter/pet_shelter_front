@@ -65,18 +65,6 @@
     opacity: 0.5;
   }
   
-  .footer-2 {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-  }
-  
-  .footer-1 {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-  }
-  
   .switch-2 {
     flex-grow: 0;
     flex-shrink: 1;
@@ -503,8 +491,10 @@
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
-    width: 100%;
+    width: 20%;
     height: auto;
+    position: relative;
+    left: 10%;
   }
   
   .text-24 {
@@ -571,6 +561,16 @@
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
+    
+  }
+
+  .count {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
   }
   
   .dogcount {
@@ -642,7 +642,6 @@
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
-    background-color: rgba(255, 255, 255, 1);
   }
   
   .node-3 {
@@ -657,6 +656,8 @@
     flex-shrink: 1;
     flex-basis: auto;
     background-color: rgba(227, 242, 253, 1);
+    display: flex;
+    align-items: center;
   }
   
   .logo-circle {
@@ -769,28 +770,8 @@
     background-color: rgba(255, 255, 255, 1);
   }
   
-  .footer-3 {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-  }
-  
-  .sub-footer {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-  }
-  
-  .text-footer {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    opacity: 0.5;
-    font-family: var(--font-family-roboto);
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 28px;
-    text-decoration: none;
-    text-transform: none;
-    color: var(--text-black);
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
   }

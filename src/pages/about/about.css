@@ -22,7 +22,7 @@ body {
 }
   
 img {
-    max-width: 100%;
+    max-width: 20%;
     height: auto;
 }
 
@@ -76,7 +76,7 @@ img {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
-    width: 100%;
+    width: 20%;
     height: auto;
 }
 
