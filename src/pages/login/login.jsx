@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "./login.css";
 import { data, Link } from 'react-router-dom';
 import squaresImage from '../../assets/log-reg/squares.svg';
+//import eyeImage from '../../assets/log-reg/eye.svg';
 
 function Login() {
     const [formData, setFormData] = useState({ name: '', password: '' });
@@ -38,12 +39,12 @@ function Login() {
 
     return (
         <div className="login">
-            <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
-            <link href="./login.css" rel="stylesheet" />
             <title>Login</title>
+            <img src={squaresImage} className="squares" alt="Squares" />
             <div className="logo-group">
+                
+            </div>
+            <div className="login-form">
                 <div className="group-1">
                     <div className="group-2">
                         <p class="welcome-title"><span class="text-rgb-1">Welcome to Pet Shelter</span></p>
@@ -52,24 +53,17 @@ function Login() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="login-form">
-                <img src={squaresImage} className="squares" alt="Squares" />
                 <div className="main-frame">
                     <form onSubmit={handleSubmit}>
-                        <div className="text-field">
-                            <span class="text-rgb-2"><input type="email" name="email" class="input-field" value={formData.name} onChange={handleChange} placeholder="E-mail" /></span>
-                        </div>
-                        <div className="text-field">
-                            <span class="text-rgb-2"><input type="password" name="password" class="input-field" value={formData.password} onChange={handleChange} placeholder="Password" /></span>
-                            <div className="password-hide-toggle">
-                                <div className="eye-icon">
-                                    <img src={eyeImage} className="eye" alt="Eye" />
-                                </div>
-                                <p class="hide-text"><span class="text-rgb-1">Hide</span></p>
+                        <span class="text-rgb-2"><input type="email" name="email" class="text-field" value={formData.name} onChange={handleChange} placeholder="E-mail" /></span>
+                        <div className="password-hide-toggle">
+                            <div className="eye-icon">
+                                <img src="{eyeImage}" className="eye" alt="Eye" />
                             </div>
-                            <p class="forgot-password"><span class="text-rgb-1">Forgot password?</span></p>
+                            <p class="hide-text"><span class="text-rgb-1">Hide</span></p>
                         </div>
+                        <span class="text-rgb-2"><input type="password" name="password" class="text-field" value={formData.password} onChange={handleChange} placeholder="Password" /></span>
+                        <p class="forgot-password"><span class="text-rgb-1">Forgot password?</span></p>
                         <button className="login-button" type="submit">Log in</button>
                         {message && <p className="message">{message}</p>}
                     </form>

@@ -20,7 +20,7 @@ function Header() {
                     <p class="logo-text"><span class="text-black">Pet Adoption Center</span></p>
                         <div class="navigation">
                             <a href="/"><p class="nav-text"><span class="text-black">Home</span></p></a>
-                            <p class="nav-text"><span class="text-black">Animal Catalog</span></p>
+                            <a href="/catalog"><p class="nav-text"><span class="text-black">Catalog</span></p></a>
                             <a href="/#news"><p class="nav-text"><span class="text-black">News</span></p></a>
                             <p class="nav-text"><span class="text-black">Gallery</span></p>
                             <a href="/#reviews"><p class="nav-text"><span class="text-black">Reviews</span></p></a>

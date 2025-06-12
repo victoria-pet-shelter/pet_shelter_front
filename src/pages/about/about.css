@@ -32,6 +32,9 @@ img {
     flex-basis: auto;
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.5);
     background-color: rgba(30, 220, 249, 1);
+    width: 25%;
+    position: relative;
+    left: 12.5%;
 }
 
 .history-title {
@@ -70,14 +73,32 @@ img {
     flex-basis: auto;
     box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.5);
     background-color: rgba(30, 220, 249, 1);
+    width: 25%;
+    position: relative;
+    left: 50%;
+    margin-top: -3.75%;
+    padding-bottom: 20px;
 }
 
 .alan {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
-    width: 20%;
+    width: 10%;
     height: auto;
+    padding-top: 10px;
+}
+
+.alan-group {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: -50%;
+    padding-bottom: 10px;
 }
 
 .name {
@@ -108,12 +129,21 @@ img {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
 }
 
 .alan-avatar {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
+    background-color: rgba(227, 242, 253, 1);
+    position: relative;
+    left: 37.5%;
+    margin-top: -21%;
 }
 
 .mission-title {
@@ -151,12 +181,15 @@ img {
     flex-shrink: 1;
     flex-basis: auto;
     background-color: rgba(227, 242, 253, 1);
+    margin-top: -9%;
+    padding-bottom: 70px;
 }
 
 .node-1 {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
+    width: 25%;
 }
 
 .our-history {
@@ -171,6 +204,11 @@ img {
     flex-shrink: 1;
     flex-basis: auto;
     background-color: rgba(227, 242, 253, 1);
+    width: 50%;
+    height: auto;
+    position: relative;
+    margin-top: 0.75%;
+    padding-top: 25px;
 }
 
 .about-us {
@@ -192,4 +230,9 @@ img {
     flex-shrink: 1;
     flex-basis: auto;
     background-color: rgba(255, 255, 255, 1);
+}
+
+.mark {
+    width: 20%;
+    height: auto;
 }
