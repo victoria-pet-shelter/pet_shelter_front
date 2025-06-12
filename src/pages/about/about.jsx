@@ -1,5 +1,10 @@
 import './about.css';
+<<<<<<< HEAD:src/pages/about.jsx
+import gigachad from '../images/about/gigachad.jpg';
+import markImage from '../images/about/mark.png';
+=======
 import gigachad from '../../assets/about/gigachad.jpg';
+>>>>>>> c316776868c0802e9a70aabf559c59286e54ff03:src/pages/about/about.jsx
 
 function About() {
     return (
@@ -32,7 +37,7 @@ function About() {
                         <div class="node-1">
                             <div class="group">
                                 <p class="name"><span class="text-black">Mark Korobkin</span></p>
-                                <img src="./images/about/mark.png" class="mark" alt="Mark Korobkin" />
+                                <img src={markImage} class="mark" alt="Mark Korobkin" />
                                 <p class="role"><span class="text-black">Direktors</span></p>
                             </div>
                         </div>

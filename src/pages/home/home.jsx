@@ -102,9 +102,9 @@ function Home() {
         <div class="switch">
           <div class="switch-2"></div>
           <div class="bright-switch">
-            <img src="./images/switch.svg" class="bright" alt="Brightness" />
+            <img src={brightnessSwitch} class="bright" alt="Brightness" />
             <div class="light-ic">
-              <img src="./images/light.svg" class="light" alt="Light" />
+              <img src={lightIcon} class="light" alt="Light" />
             </div>
           </div>
         </div>

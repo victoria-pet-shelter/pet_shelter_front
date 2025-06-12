@@ -64,7 +64,7 @@ function Login() {
                             <span class="text-rgb-2"><input type="password" name="password" class="input-field" value={formData.password} onChange={handleChange} placeholder="Password" /></span>
                             <div className="password-hide-toggle">
                                 <div className="eye-icon">
-                                    <img src="./images/eye.svg" className="eye" alt="Eye" />
+                                    <img src={eyeImage} className="eye" alt="Eye" />
                                 </div>
                                 <p class="hide-text"><span class="text-rgb-1">Hide</span></p>
                             </div>
