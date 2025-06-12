@@ -1,10 +1,7 @@
 import './register.css';
 import React, { useState } from 'react';
-<<<<<<< HEAD
-=======
 import { Link } from 'react-router-dom';
 import squaresImage from '../../assets/log-reg/squares.svg';
->>>>>>> mark_dev
 
 function Register() {
     const [formData, setFormData] = useState({ username: '', name: '', password: '' });

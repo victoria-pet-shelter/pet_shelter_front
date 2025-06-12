@@ -5,25 +5,11 @@ import Login from "./pages/login/login";
 import Contact from "./pages/contacts/contacts";
 import Register from "./pages/register/register";
 import Header from "./components/header/header";
-<<<<<<< HEAD
-// import Footer from "./components/footer/footer";
-=======
 import Footer from "./components/footer/footer";
->>>>>>> mark_dev
 
 function App() {
   return(
     <>
-<<<<<<< HEAD
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
-=======
     <Header />
     <hr />
     <Routes>
@@ -35,7 +21,6 @@ function App() {
     </Routes>
     <hr />
     <Footer />
->>>>>>> mark_dev
     </>
   );
 }
