@@ -1,8 +1,12 @@
 import './register.css';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD:src/pages/register.jsx
 import squaresImage from '../images/squares.svg';
 import eyeImage from '../images/eye.svg';
+=======
+import squaresImage from '../../assets/log-reg/squares.svg';
+>>>>>>> c316776868c0802e9a70aabf559c59286e54ff03:src/pages/register/register.jsx
 
 function Register() {
     const [formData, setFormData] = useState({ username: '', name: '', password: '' });

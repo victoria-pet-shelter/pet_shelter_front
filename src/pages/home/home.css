@@ -28,7 +28,6 @@
   }
   
   img {
-    max-width: 200px;
     height: auto;
   }
   
@@ -64,18 +63,6 @@
     flex-shrink: 1;
     flex-basis: auto;
     opacity: 0.5;
-  }
-  
-  .footer-2 {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-  }
-  
-  .footer-1 {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
   }
   
   .switch-2 {
@@ -493,7 +480,7 @@
     flex-basis: auto;
     font-family: var(--font-family-roboto);
     font-weight: 700;
-    font-size: 38px;
+    font-size: 52px;
     line-height: 100px;
     text-decoration: none;
     text-transform: none;
@@ -506,6 +493,8 @@
     flex-basis: auto;
     width: 20%;
     height: auto;
+    position: relative;
+    left: 10%;
   }
   
   .text-24 {
@@ -572,6 +561,16 @@
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
+    
+  }
+
+  .count {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
   }
   
   .dogcount {
@@ -643,7 +642,6 @@
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
-    background-color: rgba(255, 255, 255, 1);
   }
   
   .node-3 {
@@ -658,6 +656,8 @@
     flex-shrink: 1;
     flex-basis: auto;
     background-color: rgba(227, 242, 253, 1);
+    display: flex;
+    align-items: center;
   }
   
   .logo-circle {
@@ -666,19 +666,6 @@
     flex-basis: auto;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 100px;
-  }
-  
-  .logo-text {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: auto;
-    font-family: var(--font-family-roboto);
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 36px;
-    text-decoration: none;
-    text-transform: none;
-    color: var(--text-black);
   }
   
   .nav-text {
@@ -749,20 +736,6 @@
     background-color: rgba(30, 220, 249, 1);
   }
   
-  .top-bar {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-    flex-grow: 0;
-    flex-shrink: 1;
-    width: 100%;
-    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.5);
-    background-color: rgba(30, 220, 249, 1);
-  }
-  
   .logo {
     flex-grow: 0;
     flex-shrink: 1;
@@ -797,28 +770,8 @@
     background-color: rgba(255, 255, 255, 1);
   }
   
-  .footer-3 {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-  }
-  
-  .sub-footer {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-  }
-  
-  .text-footer {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    opacity: 0.5;
-    font-family: var(--font-family-roboto);
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 28px;
-    text-decoration: none;
-    text-transform: none;
-    color: var(--text-black);
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
   }

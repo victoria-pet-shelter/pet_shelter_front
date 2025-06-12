@@ -1,6 +1,10 @@
 import './about.css';
+<<<<<<< HEAD:src/pages/about.jsx
 import gigachad from '../images/about/gigachad.jpg';
 import markImage from '../images/about/mark.png';
+=======
+import gigachad from '../../assets/about/gigachad.jpg';
+>>>>>>> c316776868c0802e9a70aabf559c59286e54ff03:src/pages/about/about.jsx
 
 function About() {
     return (

@@ -1,0 +1,48 @@
+.logo {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    width: 50px;
+    height: auto;
+  }
+
+  .footer-2 {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+  }
+  
+  .footer-1 {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    flex-direction: column;
+  }
+
+  .footer-3 {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+  }
+  
+  .sub-footer {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+  }
+  
+  .text-footer {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    
+    opacity: 0.5;
+    font-family: var(--font-family-roboto);
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 28px;
+    text-decoration: none;
+    text-transform: none;
+    text-align: center;
+    color: var(--text-black);
+  }
