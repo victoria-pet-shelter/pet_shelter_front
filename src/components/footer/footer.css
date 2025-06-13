@@ -1,0 +1,137 @@
+.logo {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    width: auto;
+    height: 50px;
+  }
+
+  .footer-2 {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-1 {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    
+
+    padding-top: 10px;
+  }
+
+  .footer-3 {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    padding-top: 10px;
+  }
+  
+  .sub-footer {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 110px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .text-footer {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    
+    opacity: 0.5;
+    font-family: var(--font-family-roboto);
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 28px;
+    text-decoration: none;
+    text-transform: none;
+    text-align: center;
+    color: var(--text-black);
+  }
+
+.node-1 {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-footer {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    
+    opacity: 0.5;
+    font-family: var(--font-family-roboto);
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 28px;
+    text-decoration: none;
+    text-transform: none;
+    text-align: center;
+    color: var(--text-black);
+  }
+
+  .about-footer {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    width: auto;
+    opacity: 0.5;
+    font-family: var(--font-family-roboto);
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 28px;
+    text-decoration: none;
+    text-transform: none;
+    text-align: center;
+    color: var(--text-black);
+  }
+
+  .terms-footer {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    
+    opacity: 0.5;
+    font-family: var(--font-family-roboto);
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 28px;
+    text-decoration: none;
+    text-transform: none;
+    text-align: center;
+    color: var(--text-black);
+  }
+  .privacy-footer {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    
+    opacity: 0.5;
+    font-family: var(--font-family-roboto);
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 28px;
+    text-decoration: none;
+    text-transform: none;
+    text-align: center;
+    color: var(--text-black);
+  }
+
+  .brightness {
+    max-width: 50px;
+    height: auto;
+    width: 50px;
+  }

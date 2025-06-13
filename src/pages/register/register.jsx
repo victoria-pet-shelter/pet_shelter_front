@@ -1,8 +1,11 @@
 import './register.css';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import squaresImage from '../../assets/log-reg/squares.svg';
+//import eyeImage from '../../assets/log-reg/eye.svg';
 
 function Register() {
-    const [formData, setFormData] = useState({ username: '', name: '', password: '' });
+    const [formData, setFormData] = useState({ username: '', name: '', password: '', promotions: true });
     const [message, setMessage] = useState('');
 
     const handleChange = (e) => {
@@ -18,6 +21,7 @@ function Register() {
                 body: JSON.stringify(formData),
             });
 
+            const data = await response.json();
             if (response.ok) {
                 setMessage("User registered successfully!");
             } else {
@@ -30,51 +34,57 @@ function Register() {
 
     return (
         <div className="register">
-            <meta charset='utf-8' />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>Register</title>
-            <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
-            <div class="register-frame">
-                <div class="squares">
-                    <img src="./images/squares.svg" class="squares" alt="Squares" />
-                </div>
-                <div class="sidebar">
-                    <div class="sign-up">
-                        <div class="page">
-                            <div class="sign-up-frame">
-                                <div class="register-title">
-                                    <p class="welcome-title"><span class="text-rgb-1">Welcome to Pet Shelter</span></p>
-                                    <div className="node">
-                                        <p class="welcome-subtitle"><span class="text-rgb-1">Already have an account? <a href="/login">Login</a></span></p>
-                                    </div>
-                                </div>
-                                <div className="registation-form">
-                                    <img src="./images/squares.svg" className="squares" alt="Squares" />
-                                    <div className="main-frame">
-                                        <form onSubmit={handleSubmit}>
-                                            <div className="text-field">
-                                                <span class="text-rgb-2"><input type="email" name="username" class="input-field" value={formData.username} onChange={handleChange} placeholder="E-mail" /></span>
-                                            </div>
-                                            <div className="text-field">
-                                                <span class="text-rgb-2"><input type="password" name="password" class="input-field" value={formData.password} onChange={handleChange} placeholder="Password" /></span>
-                                                <div className="password-hide-toggle">
-                                                    <div className="eye-icon">
-                                                        <img src="./images/eye.svg" className="eye" alt="Eye" />
-                                                    </div>
-                                                    <p class="hide-text"><span class="text-rgb-1">Hide</span></p>
-                                                </div>
-                                                <p class="forgot-password"><span class="text-rgb-1">Forgot password?</span></p>
-                                            </div>
-                                            <button className="register-button" type="submit">Create an account</button>
-                                            {message && <p className="message">{message}</p>}
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <img src={squaresImage} class="squares" alt="Squares" />
+            <div className="registration-form">
+                <div class="register-title">
+                    <p class="welcome-title"><span class="text-rgb-1">Welcome to Pet Shelter</span></p>
+                    <div className="node">
+                        <p class="welcome-subtitle"><span class="text-rgb-1">Already have an account? <a href="/login">Login</a></span></p>
                     </div>
                 </div>
+                <div className="main-frame">
+                    <form onSubmit={handleSubmit}>
+                        <div class="text-field">
+                            <label class="input-label">Username</label>
+                            <span class="text-rgb-2"><input type="text" name="username" class="input-field" value={formData.username} onChange={handleChange} /></span>
+                        </div>
+                        <div class="text-field">
+                            <label class="input-label">E-mail</label>
+                            <span class="text-rgb-2"><input type="email" name="name" class="input-field" value={formData.name} onChange={handleChange} /></span>
+                        </div>
+                        <div className="password-hide-toggle">
+                            <div className="eye-icon">
+                                <img src="{eyeImage}" className="eye" alt="Eye" />
+                            </div>
+                            <p class="hide-text"><span class="text-rgb-1">Hide</span></p>
+                        </div>
+                        <div class="text-field">
+                            <label class="input-label">Password</label>
+                            <span class="text-rgb-2"><input type="password" name="password" class="input-field" value={formData.password} onChange={handleChange} /></span>
+                        </div>
+                        <div class="requirements">
+                            <div class="requirements-column">
+                                <p>&bull; Use 8 or more characters</p>
+                                <p>&bull; One special character</p>
+                                <p>&bull; One lowercase character</p>
+                            </div>
+                            <div class="requirements-column">
+                                <p>&bull; One uppercase character</p>
+                                <p>&bull; One number</p>
+                            </div>
+                        </div>
+                        <span class="text-rgb-2"><label class="checkbox">I want to receive e-mails about the product, feature<br />updates, events and marketing promotions.
+                            <input type="checkbox" name="promotions" onChange={(e) => setFormData({ ...formData, promotions: e.target.checked })} />
+                            <span class="checkmark"></span>
+                        </label></span>
+                        <p><span class="text-rgb-2">By creating an account, you agree to the <a href="/terms">Terms of Use</a><br />and <a href="/privacy">Privacy Policy</a>.</span></p>
+                        <button className="register-button" type="submit">Create an account</button>
+                        {message && <p className="message">{message}</p>}
+                    </form>
+                </div>
             </div>
+            
         </div>
     );
 }
