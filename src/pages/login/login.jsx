@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import "./login.css";
 import { data, Link } from 'react-router-dom';
 import squaresImage from '../../assets/log-reg/squares.svg';
-//import eyeImage from '../../assets/log-reg/eye.svg';
+// import eyeImage from '../../assets/log-reg/eye.svg';
 
 function Login() {
     const [formData, setFormData] = useState({ name: '', password: '' });
