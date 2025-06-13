@@ -390,7 +390,6 @@
     text-decoration: none;
     text-transform: none;
     color: var(--text-black);
-    
   }
   
   .text-17 {
@@ -616,7 +615,6 @@
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
-    
   }
 
   .count {
