@@ -55,15 +55,15 @@ function Home() {
           <div class="news-items">
             <div class="news-item">
               <p class="emoji"><span class="text-black">📰</span></p>
-              <p class="article-title"><span class="text-black">New Adoption Policies</span></p>
-              <p class="article-subtitle"><span class="text-black">Learn about our updated<br />procedures</span></p>
+              <p class="article-title">New Adoption Policies</p>
+              <p class="article-subtitle">Learn about our updated<br />procedures</p>
               <p class="article-date"><span class="text-black">Nov 12, 2022</span></p>
             </div>
             <div class="news-item">
               <p class="emoji"><span class="text-black">🐾</span></p>
               <p class="article-title"><span class="text-black">Pet Care Tips</span></p>
-              <p class="article-subtitle"><span class="text-black">Helpful advice for pet owners</span></p>
-              <p class="article-date"><span class="text-black">Oct 30, 2022</span></p>
+              <p class="article-subtitle">Helpful advice for pet owners</p>
+              <p class="article-date">Oct 30, 2022</p>
             </div>
             <div class="image-container">
               <div class="image">

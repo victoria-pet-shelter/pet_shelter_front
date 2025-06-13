@@ -5,7 +5,7 @@ import squaresImage from '../../assets/log-reg/squares.svg';
 //import eyeImage from '../../assets/log-reg/eye.svg';
 
 function Register() {
-    const [formData, setFormData] = useState({ username: '', name: '', password: '' });
+    const [formData, setFormData] = useState({ username: '', name: '', password: '', promotions: true });
     const [message, setMessage] = useState('');
 
     const handleChange = (e) => {
@@ -45,15 +45,40 @@ function Register() {
                 </div>
                 <div className="main-frame">
                     <form onSubmit={handleSubmit}>
-                        <span class="text-rgb-2"><input type="email" name="username" class="input-field" value={formData.username} onChange={handleChange} placeholder="E-mail" /></span>
+                        <div class="text-field">
+                            <label class="input-label">Username</label>
+                            <span class="text-rgb-2"><input type="text" name="username" class="input-field" value={formData.username} onChange={handleChange} /></span>
+                        </div>
+                        <div class="text-field">
+                            <label class="input-label">E-mail</label>
+                            <span class="text-rgb-2"><input type="email" name="name" class="input-field" value={formData.name} onChange={handleChange} /></span>
+                        </div>
                         <div className="password-hide-toggle">
                             <div className="eye-icon">
                                 <img src="{eyeImage}" className="eye" alt="Eye" />
                             </div>
                             <p class="hide-text"><span class="text-rgb-1">Hide</span></p>
                         </div>
-                        <span class="text-rgb-2"><input type="password" name="password" class="input-field" value={formData.password} onChange={handleChange} placeholder="Password" /></span>
-                        <p class="forgot-password"><span class="text-rgb-1">Forgot password?</span></p> 
+                        <div class="text-field">
+                            <label class="input-label">Password</label>
+                            <span class="text-rgb-2"><input type="password" name="password" class="input-field" value={formData.password} onChange={handleChange} /></span>
+                        </div>
+                        <div class="requirements">
+                            <div class="requirements-column">
+                                <p>&bull; Use 8 or more characters</p>
+                                <p>&bull; One special character</p>
+                                <p>&bull; One lowercase character</p>
+                            </div>
+                            <div class="requirements-column">
+                                <p>&bull; One uppercase character</p>
+                                <p>&bull; One number</p>
+                            </div>
+                        </div>
+                        <span class="text-rgb-2"><label class="checkbox">I want to receive e-mails about the product, feature<br />updates, events and marketing promotions.
+                            <input type="checkbox" name="promotions" onChange={(e) => setFormData({ ...formData, promotions: e.target.checked })} />
+                            <span class="checkmark"></span>
+                        </label></span>
+                        <p><span class="text-rgb-2">By creating an account, you agree to the <a href="/terms">Terms of Use</a><br />and <a href="/privacy">Privacy Policy</a>.</span></p>
                         <button className="register-button" type="submit">Create an account</button>
                         {message && <p className="message">{message}</p>}
                     </form>
