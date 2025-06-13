@@ -2,11 +2,33 @@
     --font-family-roboto: 'Roboto', sans-serif;
 }
 
+body {
+    --catalog-background-color: #e3f2fd;
+    --catalog2-background-color: #1edcf9;
+    --square: #119cb1;
+    --button-border: #444;
+    --sidebar-image-color: #eee;
+    --sidebar-option-color: #bbb;
+    --animal-species: #ccc;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --adopt-text-color: white;
+}
+
+body [data-theme='dark'] {
+    --catalog-background-color: #333;
+    --catalog2-background-color: #006;
+    --button-border: #ccc;
+    --adopt-text-color: black;
+    --sidebar-image-color: #666;
+    --sidebar-option-color: #bbb;
+    
+}
+
 .sidebar {
     font-size: 28px;
-    background-color: #eee;
+    background-color: var(--sidebar-image-color);
     width: 10%;
-    border: 1px solid #bbb;
+    border: 1px solid var(--sidebar-option-color);
 }
 
 .sidebar-item {
@@ -22,7 +44,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #bbb;
+    background-color: var(--sidebar-option-color);
     border-radius: 50%;
 }
 
@@ -30,31 +52,29 @@
     display: flex;
     flex-direction: row;
     font-family: var(--font-family-roboto);
-    background-color: rgba(227, 242, 253, 1);
+    background-color: var(--catalog-background-color);
 }
-
-
 
 .image-box {
     height: 150px;
     width: 150px;
     max-width: 150px;
-    border: 1px solid #444;
+    border: 1px solid var(--button-border);
     border-radius: 10px;
-    box-shadow: 5px 3px 2px rgba(0, 0, 0, 0.1);
-    background-color: #eee;
+    box-shadow: 5px 3px 2px var(--shadow);
+    background-color: var(--sidebar-image-color);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .adopt-button {
-    border: 1px solid #444;
+    border: 1px solid var(--button-border);
     border-radius: 10px;
-    color: white;
-    background-color: #444;
+    color: var(--adopt-text-color);
+    background-color: var(--button-border);
     width: 80px;
-    box-shadow: 5px 3px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 3px 2px var(--shadow);
     position: relative;
     left: 50%;
 }
@@ -79,7 +99,7 @@
     padding-top: 5px;
     padding-left: 30px;
     padding-right: 200px;
-    background-color: #1edcf9;
+    background-color: var(--catalog2-background-color);
 }
 
 .animal-species {
@@ -88,16 +108,16 @@
     left: 2.5%;
     width: auto;
     max-width : 50px;
-    border: 1px solid #444;
+    border: 1px solid var(--button-border);
     border-radius: 10px;
     text-align: center;
-    background-color: #ccc;
+    background-color: var(--animal-species);
 }
 
 .square-1 {
     width: 30px;
     height: 30px;
-    background-color: #119cb1;
+    background-color: var(--square);
     position: absolute;
     top: 65px;
     left: 32%;
@@ -107,7 +127,7 @@
 .square-2 {
     width: 30px;
     height: 30px;
-    background-color: #119cb1;
+    background-color: var(--square);
     position: absolute;
     rotate: 27deg;
     top: 65px;
@@ -117,7 +137,7 @@
 .square-3 {
     width: 30px;
     height: 30px;
-    background-color: #119cb1;
+    background-color: var(--square);
     position: absolute;
     rotate: 27deg;
     top: 220px;
@@ -127,7 +147,7 @@
 .square-4 {
     width: 30px;
     height: 30px;
-    background-color: #119cb1;
+    background-color: var(--square);
     position: absolute;
     rotate: 27deg;
     top: 150px;
@@ -137,7 +157,7 @@
 .square-5 {
     width: 30px;
     height: 30px;
-    background-color: #119cb1;
+    background-color: var(--square);
     position: absolute;
     rotate: 27deg;
     top: 265px;
@@ -147,7 +167,7 @@
 .square-6 {
     width: 30px;
     height: 30px;
-    background-color: #119cb1;
+    background-color: var(--square);
     position: absolute;
     rotate: 27deg;
     top: 320px;
@@ -157,7 +177,7 @@
 .square-7 {
     width: 30px;
     height: 30px;
-    background-color: #119cb1;
+    background-color: var(--square);
     position: absolute;
     rotate: 27deg;
     top: 480px;
@@ -167,7 +187,7 @@
 .square-8 {
     width: 30px;
     height: 30px;
-    background-color: #119cb1;
+    background-color: var(--square);
     position: absolute;
     rotate: 27deg;
     top: 480px;
@@ -177,7 +197,7 @@
 .square-9 {
     width: 20px;
     height: 20px;
-    background-color: #119cb1;
+    background-color: var(--square);
     position: absolute;
     rotate: 27deg;
     top: 560px;
@@ -187,7 +207,7 @@
 .square-10 {
     width: 20px;
     height: 20px;
-    background-color: #119cb1;
+    background-color: var(--square);
     position: absolute;
     rotate: 27deg;
     top: 620px;
@@ -197,7 +217,7 @@
 .square-11 {
     width: 20px;
     height: 20px;
-    background-color: #119cb1;
+    background-color: var(--square);
     position: absolute;
     rotate: 27deg;
     top: 685px;
@@ -207,7 +227,7 @@
 .square-12 {
     width: 20px;
     height: 20px;
-    background-color: #119cb1;
+    background-color: var(--square);
     position: absolute;
     rotate: 27deg;
     top: 685px;
@@ -217,7 +237,7 @@
 .square-13 {
     width: 20px;
     height: 20px;
-    background-color: #119cb1;
+    background-color: var(--square);
     position: absolute;
     rotate: 27deg;
     top: 760px;
@@ -227,7 +247,7 @@
 .square-14 {
     width: 20px;
     height: 20px;
-    background-color: #119cb1;
+    background-color: var(--square);
     position: absolute;
     rotate: 27deg;
     top: 760px;
@@ -237,7 +257,7 @@
 .square-15 {
     width: 20px;
     height: 20px;
-    background-color: #119cb1;
+    background-color: var(--square);
     position: absolute;
     rotate: 27deg;
     top: 890px;
@@ -247,7 +267,7 @@
 .square-16 {
     width: 20px;
     height: 20px;
-    background-color: #119cb1;
+    background-color: var(--square);
     position: absolute;
     rotate: 27deg;
     top: 930px;
@@ -257,7 +277,7 @@
 .square-17 {
     width: 20px;
     height: 20px;
-    background-color: #119cb1;
+    background-color: var(--square);
     position: absolute;
     rotate: 27deg;
     top: 980px;

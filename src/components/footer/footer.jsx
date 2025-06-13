@@ -5,28 +5,16 @@ import { useMediaQuery } from "react-responsive";
 import facebookLogo from "../../assets/footer/facebook.png";
 import twitterLogo from "../../assets/footer/twitter.png";
 import vimeoLogo from "../../assets/footer/vimeo.png";
+import useLocalStorage from 'use-local-storage';
 
 function Footer() {
-  const [brightness, setBrightness] = useState(false);
-  const light = require("../../assets/footer/light.svg");
-  const dark = require("../../assets/footer/dark.svg");
-  const systemPrefersDark = useMediaQuery(
-    {
-      query: "(prefers-color-scheme: dark)",
-    },
-    undefined,
-    (isSystemDark) => setBrightness(isSystemDark)
-  );
+    const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
 
   return (
-    <div class="footer-1">
+    <div class="footer-1" data-theme={theme}>
       <div class="footer-2">
-        <Toggle
-          checked={brightness}
-          onChange={({ target }) => setBrightness(target.checked)}
-          icons={{ checked: "🌙", unchecked: "🔆" }}
-          aria-label="Dark mode toggle"
-        />
+        <input type="checkbox" onChange={setTheme} />
         <a href="/contact">
           <p class="contact-footer">
             <span class="text-black">Contacts</span>

@@ -1,11 +1,15 @@
 import './catalog.css';
 import React, { useState, useEffect } from 'react';
+import useLocalStorage from 'use-local-storage';
 
 function Catalog() {
+    const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
+    const [dbInfo, setDbInfo] = useState({ species: '', breed: '', age: 0, imageLink: '' });
     const [species, setSpecies] = useState("Dog");
 
     return (
-        <div className="catalog">
+        <div className="catalog" data-theme={theme}>
             <title>Catalog</title>
             <div class="square-1"></div>
             <div class="square-2"></div>
