@@ -10,13 +10,19 @@ function Contact() {
             <title>Contact us</title>
             <div class="map-square"></div>
             <img src={map} class="map" alt="Map" />
+            
             <div class="square-1"></div>
             <div class="square-2"></div>
             <div class="square-3"></div>
+            <div class="square-4"></div>
+            <div class="square-5"></div>
+            <div class="square-6"></div>
+            <div class="square-7"></div>
+            
             <div className="info">
-                <p class="address"><span class="text-black">Address:<br />Latvia, Fontana iela 69-42</span></p>
-                <p class="phone"><span class="text-black">Phone: +371 29 969 333</span></p>
-                <p class="email"><span class="text-black">Email:<br />markkorobkin@hotmail.com</span></p>
+                <p class="info-text"><span class="text-black">Address:<br />Latvia, Fontana iela 69-42</span></p>
+                <p class="info-text"><span class="text-black">Phone: +371 29 969 333</span></p>
+                <p class="info-text"><span class="text-black">Email:<br />markkorobkin@hotmail.com</span></p>
                 <p class="open-time">Work day: 5:00 - 17:00</p>
             </div>
             <div className="socials">
@@ -24,6 +30,9 @@ function Contact() {
                 <a href="https://vimeo.com"><img src={vimeoLogo} className="logo" alt="Vimeo" /></a>
                 <a href="https://x.com"><img src={twitterLogo} className="logo" alt="Twitter" /></a>
             </div>
+            <p class="paws-1">🐾</p>
+            <p class="paws-2">🐾</p>
+            <p class="paws-3">🐾</p>
             
             <div className="contact-us">
                 <div className="form-titles">
@@ -47,7 +56,6 @@ function Contact() {
                     <button type="submit" className="form-button"><span className="text-white">Submit</span></button>
                 </form>
                 <hr className="divider" />
-                <p class="logo-text"><span class="text-black">🐾</span></p>
             </div>      
         </div>
     );

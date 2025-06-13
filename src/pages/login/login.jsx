@@ -55,14 +55,20 @@ function Login() {
                 </div>
                 <div className="main-frame">
                     <form onSubmit={handleSubmit}>
-                        <span class="text-rgb-2"><input type="email" name="email" class="text-field" value={formData.name} onChange={handleChange} placeholder="E-mail" /></span>
+                        <div class="text-field">
+                            <label class="input-label">E-mail</label>
+                            <span class="text-rgb-2"><input type="email" name="email" class="input-field" value={formData.name} onChange={handleChange} /></span>
+                        </div>
                         <div className="password-hide-toggle">
                             <div className="eye-icon">
                                 <img src="{eyeImage}" className="eye" alt="Eye" />
                             </div>
                             <p class="hide-text"><span class="text-rgb-1">Hide</span></p>
                         </div>
-                        <span class="text-rgb-2"><input type="password" name="password" class="text-field" value={formData.password} onChange={handleChange} placeholder="Password" /></span>
+                        <div class="text-field">
+                            <label class="input-label">Password</label>
+                            <span class="text-rgb-2"><input type="password" name="password" class="input-field" value={formData.password} onChange={handleChange} /></span>
+                        </div>
                         <p class="forgot-password"><span class="text-rgb-1">Forgot password?</span></p>
                         <button className="login-button" type="submit">Log in</button>
                         {message && <p className="message">{message}</p>}
