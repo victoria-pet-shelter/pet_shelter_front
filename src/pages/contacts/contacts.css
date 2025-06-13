@@ -178,14 +178,16 @@ img {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
-    background-color: var(--text-white);
+    background-color: rgba(227, 242, 253, 1);
 }
 
 .socials {
     display: flex;
     flex-direction: row;
     gap: 16px;
-    padding: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
@@ -194,4 +196,47 @@ img {
 .form {
     
     width: 50%
+}
+
+.info {
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    width: min-content;
+    background-color: #1edcf9;
+    font-family: var(--font-family-roboto);
+    font-weight: bold;
+    font-size: 24px;
+    padding-left: 10px;
+}
+
+.open-time {
+    padding: 20px;
+    background-color: #119CB1;
+    font-size: 32px;
+    color: #ffffff;
+}
+
+.map {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 30%;
+}
+
+.map-square {
+    width: 300px;
+    height: 200px;
+    background-color: #ccc;
+    position: absolute;
+    top: 100px;
+    right: 200px;
+}
+
+.square-1 {
+    width: 3%;
+    height: 3%;
+    background-color: #1edcf9;
+    position: absolute;
+    rotate: 30deg;
+    top: 75px;
+    right: 45%
 }

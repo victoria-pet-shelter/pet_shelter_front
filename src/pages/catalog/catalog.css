@@ -30,11 +30,10 @@
     display: flex;
     flex-direction: row;
     font-family: var(--font-family-roboto);
+    background-color: rgba(227, 242, 253, 1);
 }
 
-.catalog-content {
-    padding-left: 10px;
-}
+
 
 .image-box {
     height: 150px;
@@ -67,6 +66,20 @@
     justify-content: flex-start;
     gap: 20px;
     padding-bottom: 10px;
+    padding-left: 30px;
+}
+
+.catalog-items-2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 30px;
+    padding-right: 200px;
+    background-color: #1edcf9;
 }
 
 .animal-species {
@@ -79,4 +92,214 @@
     border-radius: 10px;
     text-align: center;
     background-color: #ccc;
+}
+
+.square-1 {
+    width: 30px;
+    height: 30px;
+    background-color: #119cb1;
+    position: absolute;
+    top: 65px;
+    left: 32%;
+    rotate: 27deg;
+}
+
+.square-2 {
+    width: 30px;
+    height: 30px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 65px;
+    left: 71%;
+}
+
+.square-3 {
+    width: 30px;
+    height: 30px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 220px;
+    left: 71%;
+}
+
+.square-4 {
+    width: 30px;
+    height: 30px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 150px;
+    left: 75%;
+}
+
+.square-5 {
+    width: 30px;
+    height: 30px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 265px;
+    left: 37.5%;
+}
+
+.square-6 {
+    width: 30px;
+    height: 30px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 320px;
+    left: 73%;
+}
+
+.square-7 {
+    width: 30px;
+    height: 30px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 480px;
+    left: 24%;
+}
+
+.square-8 {
+    width: 30px;
+    height: 30px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 480px;
+    left: 70%;
+}
+
+.square-9 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 560px;
+    left: 56.5%;
+}
+
+.square-10 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 620px;
+    left: 20.5%;
+}
+
+.square-11 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 685px;
+    left: 32.75%;
+}
+
+.square-12 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 685px;
+    left: 73.5%;
+}
+
+.square-13 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 760px;
+    left: 22.5%;
+}
+
+.square-14 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 760px;
+    left: 71%;
+}
+
+.square-15 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 890px;
+    left: 10.25%;
+}
+
+.square-16 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 930px;
+    left: 61%;
+}
+
+.square-17 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 980px;
+    left: 71%;
+}
+
+.paws-1 {
+    font-size: 60px;
+    position: absolute;
+    top: 120px;
+    left: 70%;
+    rotate: -25deg;
+}
+
+.paws-2 {
+    font-size: 60px;
+    position: absolute;
+    top: 400px;
+    left: 74%;
+    rotate: 60deg;
+}
+
+.paws-3 {
+    font-size: 60px;
+    position: absolute;
+    top: 520px;
+    left: 70%;
+    rotate: 20deg;
+}
+
+.paws-4 {
+    font-size: 60px;
+    position: absolute;
+    top: 770px;
+    left: 71%;
+    rotate: 110deg;
+}
+
+.paws-5 {
+    font-size: 60px;
+    position: absolute;
+    top: 1025px;
+    left: 72%;
+    rotate: 25deg;
 }

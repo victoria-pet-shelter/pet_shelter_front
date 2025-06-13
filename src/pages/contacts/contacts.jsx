@@ -2,22 +2,29 @@ import "./contacts.css";
 import facebookLogo from '../../assets/footer/facebook.png';
 import twitterLogo from '../../assets/footer/twitter.png';
 import vimeoLogo from '../../assets/footer/vimeo.png';
+import map from '../../assets/contacts/map.svg';
 
 function Contact() {
     return (
         <div className="contact">
             <title>Contact us</title>
+            <div class="map-square"></div>
+            <img src={map} class="map" alt="Map" />
+            <div class="square-1"></div>
+            <div class="square-2"></div>
+            <div class="square-3"></div>
             <div className="info">
                 <p class="address"><span class="text-black">Address:<br />Latvia, Fontana iela 69-42</span></p>
                 <p class="phone"><span class="text-black">Phone: +371 29 969 333</span></p>
                 <p class="email"><span class="text-black">Email:<br />markkorobkin@hotmail.com</span></p>
-                <p class="open-time"><span class="text-black">Work day: 5:00 - 17:00</span></p>
+                <p class="open-time">Work day: 5:00 - 17:00</p>
             </div>
             <div className="socials">
                 <a href="https://facebook.com"><img src={facebookLogo} className="logo" alt="Facebook" /></a>
                 <a href="https://vimeo.com"><img src={vimeoLogo} className="logo" alt="Vimeo" /></a>
                 <a href="https://x.com"><img src={twitterLogo} className="logo" alt="Twitter" /></a>
             </div>
+            
             <div className="contact-us">
                 <div className="form-titles">
                     <p className="form-title"><span className="text-black">Contact us</span></p>

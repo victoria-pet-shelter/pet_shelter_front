@@ -7,11 +7,27 @@ import starsImage from '../../assets/home/stars.svg';
 function Home() {
   return (
     <div className="App">
-      <link href="https://fonts.googleapis.com/css?family=Roboto|Inter|Poppins&display=swap" rel="stylesheet" />
+      <div class="square-1"></div>
+      <div class="square-2"></div>
+      <div class="square-3"></div>
+      <div class="square-4"></div>
+      <div class="square-5"></div>
+      <div class="square-6"></div>
+      <div class="square-7"></div>
+      <div class="square-8"></div>
+      <div class="square-9"></div>
+      <div class="square-10"></div>
+      <div class="square-11"></div>
+      <div class="square-12"></div>
+      <div class="square-13"></div>
+      <div class="square-14"></div>
+      <div class="square-15"></div>
+      <div class="square-16"></div>
+      <div class="square-17"></div>
+      <div class="square-18"></div>
       <div class="home">
         <title>Pet Shelter</title>
         <div class="news-frame">
-          <div class="rectangle-1"></div>
           <div class="text-23"><span class="text-black">Welcome to the Pet Center</span></div>
           
           <p class="text-24"><span class="text-black">Every year, the following come to “Big<br />Homes”:</span></p>
@@ -30,17 +46,7 @@ function Home() {
             <a href="/login"><button class="primary"><span class="text-black">Login</span></button></a>
           </div>
           <img src={dogsImage} class="node-2" alt="Dogs" />
-          <div class="decoration-2"></div>
-          <div class="decoration-2"></div>
-          <div class="decoration-2"></div>
-          <div class="decoration-2"></div>
-          <div class="decoration-2"></div>
-          <div class="decoration-2"></div>
-          <div class="decoration-2"></div>
-          <div class="decoration-2"></div>
-          <div class="decoration-2"></div>
-          <div class="decoration-2"></div>
-          <div class="node-3"></div>
+          
         </div>
         <div class="some-frame" id="news">
           <div class="slice-1"></div>
@@ -51,13 +57,13 @@ function Home() {
               <p class="emoji"><span class="text-black">📰</span></p>
               <p class="article-title"><span class="text-black">New Adoption Policies</span></p>
               <p class="article-subtitle"><span class="text-black">Learn about our updated<br />procedures</span></p>
-              <p class="text-16"><span class="text-black">Nov 12, 2022</span></p>
+              <p class="article-date"><span class="text-black">Nov 12, 2022</span></p>
             </div>
             <div class="news-item">
               <p class="emoji"><span class="text-black">🐾</span></p>
               <p class="article-title"><span class="text-black">Pet Care Tips</span></p>
               <p class="article-subtitle"><span class="text-black">Helpful advice for pet owners</span></p>
-              <p class="text-20"><span class="text-black">Oct 30, 2022</span></p>
+              <p class="article-date"><span class="text-black">Oct 30, 2022</span></p>
             </div>
             <div class="image-container">
               <div class="image">
@@ -108,8 +114,6 @@ function Home() {
             </div>
           </div>
         </div>
-        <p class="paw"><span class="text-black">🐾</span></p>
-        <p class="paw"><span class="text-black">🐾</span></p>
         <div class="decoration-1"></div>
       </div>
     </div>

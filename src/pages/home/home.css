@@ -377,7 +377,7 @@
     top: 10px;
   }
   
-  .text-16 {
+  .article-date {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
@@ -388,6 +388,7 @@
     text-decoration: none;
     text-transform: none;
     color: var(--text-black);
+    
   }
   
   .text-17 {
@@ -835,4 +836,184 @@
     content: "";
     clear: both;
     display: table;
+  }
+
+  .App .square-1 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 100px;
+    left: 50%;
+  }
+
+  .App .square-2 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 150px;
+    left: 90%;
+  }
+
+  .App .square-3 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 200px;
+    left: 85%;
+  }
+
+  .App .square-4 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 275px;
+    left: 11%;
+  }
+
+  .App .square-5 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 280px;
+    left: 90%;
+  }
+
+  .App .square-6 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 330px;
+    left: 7.5%;
+  }
+
+  .App .square-7 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 350px;
+    left: 85%;
+  }
+
+  .App .square-8 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 380px;
+    left: 10%;
+  }
+
+  .App .square-9 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 400px;
+    left: 49%;
+  }
+
+  .App .square-10 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 430px;
+    left: 5%;
+  }
+
+  .App .square-11 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 450px;
+    left: 85%;
+  }
+
+  .App .square-12 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 925px;
+    left: 27.5%;
+  }
+
+  .App .square-13 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 925px;
+    left: 80%;
+  }
+
+  .App .square-14 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 980px;
+    left: 32.5%;
+  }
+
+  .App .square-15 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 980px;
+    left: 40%;
+  }
+
+  .App .square-16 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 1000px;
+    left: 23%;
+  }
+
+  .App .square-17 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 1090px;
+    left: 38%;
+  }
+
+  .App .square-18 {
+    width: 20px;
+    height: 20px;
+    background-color: #119cb1;
+    position: absolute;
+    rotate: 27deg;
+    top: 1100px;
+    left: 23.5%;
   }
