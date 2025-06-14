@@ -5,8 +5,32 @@ import useLocalStorage from 'use-local-storage';
 function Catalog() {
     const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
-    const [dbInfo, setDbInfo] = useState({ species: '', breed: '', age: 0, imageLink: '' });
+    const [dbInfo, setDbInfo] = useState([]);
     const [species, setSpecies] = useState("Dog");
+    const [loading, setLoading] = useState(true);
+    const [selectedSpecies, setSelectedSpecies] = useState('All');
+
+    useEffect(() => {
+        fetch('https://localhost:5000/catalog')
+        .then(response => response.json())
+        .then(data => {
+            setDbInfo(data);
+            setLoading(false);
+        })
+        .catch(error => {
+            console.error('Error fetching animals: ', error);
+            setLoading(false);
+        });
+    }, []);
+
+    const handleSpeciesSelect = species => {
+        setSelectedSpecies(species);
+    };
+
+    const filteredAnimals = selectedSpecies === 'All'
+        ? dbInfo
+        : dbInfo.filter(animal => animal.species === selectedSpecies);
+
 
     return (
         <div className="catalog" data-theme={theme}>
@@ -85,7 +109,16 @@ function Catalog() {
             </div>
             <div class="catalog-content">
                 <div class="catalog-items">
-                    {/* Example items, replace with dynamic content as needed */}
+                    {dbInfo.map(animal => (
+                        <div key={animal.id} class="catalog-item">
+                            <p class="animal-species">{species}</p>
+                            <div class="image-box">
+                                <img src={animal.photo} class="animal-image" alt="Image" />
+                            </div>
+                            <p class="breed-age">{animal.breed}, {animal.age}</p>
+                            <button class="adopt-button">To form</button>
+                        </div>
+                    ))}
                     <div class="catalog-item">
                         <p class="animal-species">{species}</p>
                         <div class="image-box">
@@ -118,14 +151,7 @@ function Catalog() {
                         <p class="breed-age">Breed, Age</p>
                         <button class="adopt-button">To form</button>
                     </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
+                    
                 </div>
                 <div class="catalog-items-2">
                     {/* Example items, replace with dynamic content as needed */}
