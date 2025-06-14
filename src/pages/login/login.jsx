@@ -25,6 +25,8 @@ function Login() {
             // const exists = data.some(user => user.email === formData.email && user.password === formData.password);
             
             setMessage("User logged in successfully!");
+            await setTimeout(2000);
+            window.location.href = "/";
             
         } else {
             setMessage("Error logging in user.");
