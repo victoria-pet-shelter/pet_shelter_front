@@ -58,6 +58,30 @@ function Catalog() {
                     </div>
                     <a onClick={() => setSpecies("Exotic")}><p class="sidebar-item-name">Exotic</p></a>
                 </div>
+                <div class="sidebar-item">
+                    <div class="sidebar-item-icon">
+                            <p>🦥</p>
+                    </div>
+                    <a onClick={() => setSpecies("Rodent")}><p class="sidebar-item-name">Rodent</p></a>
+                </div>
+                <div class="sidebar-item">
+                    <div class="sidebar-item-icon">
+                            <p>🦥</p>
+                    </div>
+                    <a onClick={() => setSpecies("Fish")}><p class="sidebar-item-name">Fish</p></a>
+                </div>
+                <div class="sidebar-item">
+                    <div class="sidebar-item-icon">
+                            <p>🦥</p>
+                    </div>
+                    <a onClick={() => setSpecies("Farm")}><p class="sidebar-item-name">Farm</p></a>
+                </div>
+                <div class="sidebar-item">
+                    <div class="sidebar-item-icon">
+                            <p>🦥</p>
+                    </div>
+                    <a onClick={() => setSpecies("Reptile")}><p class="sidebar-item-name">Reptile</p></a>
+                </div>
             </div>
             <div class="catalog-content">
                 <div class="catalog-items">

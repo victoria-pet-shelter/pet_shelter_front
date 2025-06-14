@@ -4,7 +4,7 @@ import squaresImage from '../../assets/log-reg/squares.svg';
 // import eyeImage from '../../assets/log-reg/eye.svg';
 
 function Login() {
-    const [formData, setFormData] = useState({ name: '', password: '' });
+    const [formData, setFormData] = useState({ email: '', password: '' });
     const [message, setMessage] = useState('');
 
     const handleChange = (e) => {
@@ -14,20 +14,18 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-        const response = await fetch("http://localhost:5000/users", {
-            method: "GET",
+        const response = await fetch("http://localhost:5000/login", {
+            method: "POST",
             headers: { "Content-Type": "application/json" },
-            // body: JSON.stringify(formData),
+            body: JSON.stringify(formData),
         });
 
         const data = await response.json();
         if (response.ok) {
-            const exists = data.some(user => user.name === formData.name && user.password === formData.password);
-            if (exists) {
+            // const exists = data.some(user => user.email === formData.email && user.password === formData.password);
+            
             setMessage("User logged in successfully!");
-            } else {
-            setMessage("Error logging in user.");
-            }
+            
         } else {
             setMessage("Error logging in user.");
         }
@@ -56,7 +54,7 @@ function Login() {
                     <form onSubmit={handleSubmit}>
                         <div class="text-field">
                             <label class="input-label">E-mail</label>
-                            <span class="text-rgb-2"><input type="email" name="email" class="input-field" value={formData.name} onChange={handleChange} /></span>
+                            <span class="text-rgb-2"><input type="email" name="email" class="input-field" value={formData.email} onChange={handleChange} /></span>
                         </div>
                         <div className="password-hide-toggle">
                             <div className="eye-icon">

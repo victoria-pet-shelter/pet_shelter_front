@@ -6,11 +6,20 @@ import squaresImage from "../../assets/log-reg/squares.svg";
 
 function Register() {
   const [formData, setFormData] = useState({
-    username: "",
     name: "",
+    email: "",
     password: "",
+    role: ""
   });
+
   const [message, setMessage] = useState("");
+  const [isShelterOwner, setIsShelterOwner] = useState(false);
+
+  const toggle = () => {
+    const newRole = !isShelterOwner;
+    setIsShelterOwner(newRole);
+    setFormData({ ...formData, role: newRole ? "shelter_owner" : "user" });
+  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,13 +28,13 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/users", {
+      const response = await fetch("http://localhost:5000/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      //   const data = await response.json();
       if (response.ok) {
         setMessage("User registered successfully!");
       } else {
@@ -60,9 +69,9 @@ function Register() {
               <span class="text-rgb-2">
                 <input
                   type="text"
-                  name="username"
+                  name="name"
                   class="input-field"
-                  value={formData.username}
+                  value={formData.name}
                   onChange={handleChange}
                 />
               </span>
@@ -72,9 +81,9 @@ function Register() {
               <span class="text-rgb-2">
                 <input
                   type="email"
-                  name="name"
+                  name="email"
                   class="input-field"
-                  value={formData.name}
+                  value={formData.email}
                   onChange={handleChange}
                 />
               </span>
@@ -99,6 +108,16 @@ function Register() {
                 />
               </span>
             </div>
+            <div className="role-switch" onClick={toggle}>
+              <span className={!isShelterOwner ? "active" : ""}>User</span>
+              <div
+                className={`switch ${isShelterOwner ? "right" : "left"}`}
+              ></div>
+              <span className={isShelterOwner ? "active" : ""}>
+                Shelter Owner
+              </span>
+            </div>
+
             <div class="requirements">
               <div class="requirements-column">
                 <p>&bull; Use 8 or more characters</p>
