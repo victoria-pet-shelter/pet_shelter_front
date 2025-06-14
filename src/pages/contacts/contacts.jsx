@@ -3,10 +3,14 @@ import facebookLogo from '../../assets/footer/facebook.png';
 import twitterLogo from '../../assets/footer/twitter.png';
 import vimeoLogo from '../../assets/footer/vimeo.png';
 import map from '../../assets/contacts/map.svg';
+import useLocalStorage from 'use-local-storage';
 
 function Contact() {
+    const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
+
     return (
-        <div className="contact">
+        <div className="contact" data-theme={theme}>
             <title>Contact us</title>
             <div class="map-square"></div>
             <img src={map} class="map" alt="Map" />
@@ -20,9 +24,9 @@ function Contact() {
             <div class="square-7"></div>
             
             <div className="info">
-                <p class="info-text"><span class="text-black">Address:<br />Latvia, Fontana iela 69-42</span></p>
-                <p class="info-text"><span class="text-black">Phone: +371 29 969 333</span></p>
-                <p class="info-text"><span class="text-black">Email:<br />markkorobkin@hotmail.com</span></p>
+                <p class="info-text">Address:<br />Latvia, Fontana iela 69-42</p>
+                <p class="info-text">Phone: +371 29 969 333</p>
+                <p class="info-text">Email:<br />markkorobkin@hotmail.com</p>
                 <p class="open-time">Work day: 5:00 - 17:00</p>
             </div>
             <div className="socials">
@@ -36,24 +40,24 @@ function Contact() {
             
             <div className="contact-us">
                 <div className="form-titles">
-                    <p className="form-title"><span className="text-black">Contact us</span></p>
-                    <p className="form-subtitle"><span className="text-black">Have a question? Reach out to us</span></p>
+                    <p className="form-title">Contact us</p>
+                    <p className="form-subtitle">Have a question? Reach out to us</p>
                 </div>
                 
                 <form className="form">
                     <div className="form-group">
-                        <label htmlFor="name" className="form-label"><span className="text-black">Name</span></label>
+                        <label htmlFor="name" className="form-label">Name</label>
                         <input type="text" id="name" className="form-input" placeholder="Your name" required />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="email" className="form-label"><span className="text-black">Email</span></label>
+                        <label htmlFor="email" className="form-label">Email</label>
                         <input type="email" id="email" className="form-input" placeholder="Your email" required />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="message" className="form-label"><span className="text-black">Message</span></label>
+                        <label htmlFor="message" className="form-label">Message</label>
                         <textarea id="message" className="form-textarea" placeholder="Your message" required maxLength={200}></textarea>
                     </div>
-                    <button type="submit" className="form-button"><span className="text-white">Submit</span></button>
+                    <button type="submit" className="form-button">Submit</button>
                 </form>
                 <hr className="divider" />
             </div>      
