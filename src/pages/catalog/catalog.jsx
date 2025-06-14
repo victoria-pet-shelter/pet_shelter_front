@@ -8,36 +8,51 @@ function Catalog() {
     const [dbInfo, setDbInfo] = useState([]);
     const [selectedSpecies, setSelectedSpecies] = useState('All');
     const [loading, setLoading] = useState(true);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/pets')
+    const fetchData = (page = 1) => {
+        setLoading(true);
+        fetch(`http://localhost:5000/pets?page=${page}&pageSize=25`)
             .then(response => response.json())
             .then(data => {
-                setDbInfo(data.pets); // assuming API returns { pets: [...] }
+                setDbInfo(data.pets);
+                setCurrentPage(data.currentPage);
+                setTotalPages(data.totalPages);
                 setLoading(false);
             })
             .catch(error => {
                 console.error('Error fetching animals: ', error);
                 setLoading(false);
             });
-    }, []);
+    };
+
+    useEffect(() => {
+        fetchData(currentPage);
+    }, [currentPage]);
 
     const handleSpeciesSelect = (species) => {
         setSelectedSpecies(species);
     };
 
+    const handlePageChange = (direction) => {
+        if (direction === 'prev' && currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        } else if (direction === 'next' && currentPage < totalPages) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
     const filteredAnimals = selectedSpecies === 'All'
         ? dbInfo
-        : dbInfo.filter(animal => animal.species?.name === selectedSpecies);
+        : dbInfo.filter(animal => animal.species?.name?.toLowerCase() === selectedSpecies.toLowerCase());
 
     return (
         <div className="catalog" data-theme={theme}>
             <title>Catalog</title>
-            {/* Background design */}
             {[...Array(17)].map((_, i) => <div key={i} className={`square-${i + 1}`}></div>)}
             {[...Array(5)].map((_, i) => <p key={i} className={`paws-${i + 1}`}>🐾</p>)}
 
-            {/* Sidebar */}
             <div className="sidebar">
                 {['All', 'Dog', 'Cat', 'Bird', 'Exotic', 'Rodent', 'Fish', 'Farm', 'Reptile'].map((type, index) => (
                     <div className="sidebar-item" key={index} onClick={() => handleSpeciesSelect(type)}>
@@ -47,7 +62,6 @@ function Catalog() {
                 ))}
             </div>
 
-            {/* Main content */}
             <div className="catalog-content">
                 <div className="catalog-items">
                     {loading ? (
@@ -57,13 +71,23 @@ function Catalog() {
                             <div key={animal.id} className="catalog-item">
                                 <p className="animal-species">{animal.species?.name}</p>
                                 <div className="image-box">
-                                    <img src={animal.image} className="animal-image" alt={animal.name || 'Pet'} />
+                                    <img
+                                    src={animal.mongo_image_id ? `http://localhost:5000/image/${animal.mongo_image_id}` : '/placeholder.jpg'}
+                                    className="animal-image"
+                                        alt={animal.name || 'No photo'}
+                                    />
                                 </div>
-                                <p className="breed-age">{animal.breed?.name}, {animal.age}</p>
-                                <button className="adopt-button">To form</button>
+                                <p className="breed-age">{animal.breed?.name || 'Unknown'}, {animal.age || 'Unknown age'}</p>
+                                <button className="adopt-button" onClick={() => window.open(animal.external_url, '_blank')}>To form</button>
                             </div>
                         ))
                     )}
+                </div>
+
+                <div className="pagination">
+                    <button disabled={currentPage === 1} onClick={() => handlePageChange('prev')}>Previous</button>
+                    <span>Page {currentPage} of {totalPages}</span>
+                    <button disabled={currentPage === totalPages} onClick={() => handlePageChange('next')}>Next</button>
                 </div>
             </div>
         </div>
