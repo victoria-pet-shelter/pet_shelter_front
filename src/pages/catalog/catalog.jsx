@@ -11,7 +11,7 @@ function Catalog() {
     const [selectedSpecies, setSelectedSpecies] = useState('All');
 
     useEffect(() => {
-        fetch('https://localhost:5000/catalog')
+        fetch('https://localhost:5000/pets')
         .then(response => response.json())
         .then(data => {
             setDbInfo(data);
