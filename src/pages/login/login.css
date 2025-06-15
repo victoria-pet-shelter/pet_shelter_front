@@ -1,34 +1,33 @@
 :root {
     --font-family-poppins: 'Poppins', sans-serif;
-    --text-rgb-1: rgba(51, 51, 51, 1);
-    --text-rgb-2: rgba(102, 102, 102, 1);
-    --text-rgb-3: rgba(17, 17, 17, 1);
 }
 
-.text-rgb-1 {
-    color: var(--text-rgb-1);
+body {
+    --login-sidebar: #e3f2fd;
+    --login-button: #3f51b5;
+    --login-button-text: white;
+    --login-text: #333;
+    --login-input-color: #666;
+    --login-border: rgba(0, 0, 0, 0.1);
+    --login-logo-color: #000;
+    --login-input-border: rgba(0, 0, 0, 0.5);
 }
 
-.text-rgb-2 {
-    color: var(--text-rgb-2);
-}
-
-.text-rgb-3 {
-    color: var(--text-rgb-3);
+body [data-theme='dark'] {
+    --login-sidebar: #0c5183;
+    --login-button: #3f51b5;
+    --login-button-text: black;
+    --login-text: #aaa;
+    --login-input-color: #fff;
+    --login-border: rgba(255, 255, 255, 0.1);
+    --login-logo-color: #fff;
+    --login-input-border: rgba(255, 255, 255, 0.5);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    width: 100%;
-    min-height: 100vh;
-    overflow-x: hidden;
-    justify-content: center;
-    align-items: center;
 }
 
 img {
@@ -40,12 +39,12 @@ img {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
-    fill: rgba(196, 196, 196, 1);
+    fill: var(--login-logo-color);
     border: none;
     outline: none;
 }
 
-.welcome-title {
+.login .welcome-title {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
@@ -55,10 +54,10 @@ img {
     text-decoration: none;
     text-transform: none;
     padding-top: 10px;
-    color: var(--text-rgb-1);
+    color: var(--login-text);
 }
 
-.welcome-subtitle {
+.login .welcome-subtitle {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
@@ -67,7 +66,7 @@ img {
     font-size: 24px;
     text-decoration: none;
     text-transform: none;
-    color: var(--text-rgb-2);
+    color: var(--login-input-color);
 }
 
 .node {
@@ -116,7 +115,7 @@ img {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
-    fill: rgba(196, 196, 196, 1);
+    fill: var(--login-logo-color);
     border: none;
     outline: none;
 }
@@ -130,9 +129,9 @@ img {
     font-size: 36px;
     text-decoration: none;
     text-transform: none;
-    color: var(--text-rgb-2);
-    background-color: #e3f2fd;
-    border: 1px solid rgba(0, 0, 0, 0.5);
+    color: var(--login-input-color);
+    background-color: var(--login-sidebar);
+    border: 1px solid var(--login-input-border);
     border-radius: 6px;
     height: 50px;
     width: calc(90% - 20px);
@@ -172,10 +171,10 @@ img {
     font-size: 24px;
     text-decoration: none;
     text-transform: none;
-    color: var(--text-rgb-2);
+    color: var(--login-input-color);
 }
 
-.forgot-password {
+.login .forgot-password {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
@@ -184,7 +183,7 @@ img {
     font-size: 24px;
     text-decoration: none;
     text-transform: none;
-    color: var(--text-rgb-1);
+    color: var(--login-text);
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -194,18 +193,20 @@ img {
     height: auto;
     padding: 0.75rem;
     font-family: var(--font-family-poppins);
-    background-color: #3f51b5;
-    color: white;
+    background-color: var(--login-button);
+    color: var(--login-button-text);
     border: none;
     border-radius: 200px;
     cursor: pointer;
     font-size: 2rem;
     margin-bottom: 2vh;
+    cursor: pointer;
   }
 
 .squares {
     float: right;
     width: 50%;
+    background-color: var(--login-button-text);
 }
 
 .login {
@@ -215,9 +216,10 @@ img {
 .login-form {
     position: relative;
     width: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: #e3f2fd;
+    border: 1px solid var(--login-border);
+    background-color: var(--login-sidebar);
     padding-bottom: 75%;
+    padding-left: 20px;
 }
 
 .password-hide-toggle {
@@ -229,4 +231,8 @@ img {
     padding-right: 100px;
     position: relative;
     top: 40px;
+}
+
+.login .input-label {
+    color: var(--login-text);
 }

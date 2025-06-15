@@ -7,22 +7,25 @@ import Register from "./pages/register/register";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import Catalog from "./pages/catalog/catalog";
+import PetCard from './components/petcard/pet_card';
 
 function App() {
-  return(
+  return (
     <>
-    <Header />
-    <hr />
-    <Routes>
-      <Route exact path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="/catalog" element={<Catalog />} />
-    </Routes>
-    <hr />
-    <Footer />
+      <Header />
+      <hr />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/" element={<Catalog />} />
+        <Route path="/pet/:id" element={<PetCard />} />
+      </Routes>
+      <hr />
+      <Footer />
     </>
   );
 }

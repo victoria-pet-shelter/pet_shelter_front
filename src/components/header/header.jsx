@@ -17,21 +17,21 @@ function Header() {
                     <div class="logo-circle">
                         <img src={logoIcon} class="logo" alt="Logo" />
                     </div>
-                    <p class="logo-text"><span class="text-black">Pet Adoption Center</span></p>
-                        <div class="navigation">
-                            <a href="/"><p class="nav-text"><span class="text-black">Home</span></p></a>
-                            <a href="/catalog"><p class="nav-text"><span class="text-black">Catalog</span></p></a>
-                            <a href="/#news"><p class="nav-text"><span class="text-black">News</span></p></a>
-                            <p class="nav-text"><span class="text-black">Gallery</span></p>
-                            <a href="/#reviews"><p class="nav-text"><span class="text-black">Reviews</span></p></a>
-                            <a href="/contact"><p class="nav-text"><span class="text-black">Contacts</span></p></a>
-                            <div class="search">
-                                <p class="text-31"><span class="text-black">Search in site</span></p>
-                                <div class="search-ic">
-                                    <img src={searchIcon} class="search-ic-img" alt="Search" />
-                                </div>
+                    <p class="logo-text">Pet Adoption Center</p>
+                    <div class="navigation">
+
+                        <a href="/"><p class="nav-text">Home</p></a>
+                        <a href="/catalog"><p class="nav-text">Catalog</p></a>
+                        <a href="/#news"><p class="nav-text">News</p></a>
+                        <a href="/#reviews"><p class="nav-text">Reviews</p></a>
+                        <a href="/contact"><p class="nav-text">Contacts</p></a>
+                        <div class="search">
+                            <p class="text-31">Search in site</p>
+                            <div class="search-ic">
+                                <img src={searchIcon} class="search-ic-img" alt="Search" />
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
