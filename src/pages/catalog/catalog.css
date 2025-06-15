@@ -30,7 +30,7 @@ body [data-theme='dark'] {
 .sidebar {
     font-size: 28px;
     background-color: var(--sidebar-image-color);
-    width: 10%;
+    width: 13%;
     border: 1px solid var(--sidebar-option-color);
 }
 
@@ -43,7 +43,8 @@ body [data-theme='dark'] {
 }
 
 .sidebar-item:hover {
-    background-color: rgb(225, 225, 225);
+    /* background-color: rgb(225, 225, 225); */
+    background-color: #E0E0E0;
 }
 
 .sidebar-item-icon {
