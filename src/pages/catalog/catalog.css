@@ -58,26 +58,6 @@ body [data-theme='dark'] {
     background-color: var(--catalog-background-color);
 }
 
-.animal-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 2px 2px 5px var(--shadow);
-}
-
-
-.adopt-button {
-    border: 1px solid var(--button-border);
-    border-radius: 10px;
-    color: var(--adopt-text-color);
-    background-color: var(--button-border);
-    width: 80px;
-    box-shadow: 5px 3px 2px var(--shadow);
-    position: relative;
-    left: 50%;
-}
-
 .catalog-items {
     display: flex;
     flex-wrap: wrap;
@@ -323,10 +303,6 @@ body [data-theme='dark'] {
     rotate: 25deg;
 }
 
-.breed-age {
-    color: var(--text-color);
-}
-
 .sidebar-item-name {
     color: var(--text-color);
 }
@@ -358,13 +334,6 @@ body [data-theme='dark'] {
   cursor: not-allowed;
 }
 
-.animal-image {
-    width: 100%;
-    height: 150px;
-    object-fit: contain;
-    border-radius: 8px;
-}
-
 .catalog-items {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -387,56 +356,24 @@ body [data-theme='dark'] {
   align-items: center;
 }
 
-
-.animal-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Нижний блок с breed и age */
-.info-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: calc(100% - 100px);
-  padding: 8px;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  font-size: 14px;
-}
-
-/* Кнопка To form */
 .adopt-button {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
   background-color: var(--button-border);
   color: var(--adopt-text-color);
   border: none;
   border-radius: 6px;
-  padding: 6px 10px;
+  padding: 4px 10px;
   font-size: 13px;
   cursor: pointer;
   box-shadow: 2px 2px 4px var(--shadow);
 }
 
 .info-overlay {
-  position: absolute;
-  bottom: 32px;
-  left: 0;
-  width: 100%;
-  padding: 6px 8px;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+  position: static;
+  background: none;
+  padding: 4px 8px;
   font-size: 13px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  color: var(--text-color);
 }
-
-
 .species-label {
   position: absolute;
   top: 0;
@@ -450,14 +387,12 @@ body [data-theme='dark'] {
 }
 
 .catalog-item-footer {
-  position: absolute;
-  bottom: 6px;
-  left: 0;
-  width: 100%;
-  padding: 0 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding: 4px 0;
+  margin-top: 4px;
 }
 
 .price-tag {
@@ -488,4 +423,110 @@ body [data-theme='dark'] {
 
 .catalog-item:hover .animal-alt-overlay {
   background: rgba(255, 255, 255, 0.8);
+}
+
+.catalog-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 240px;
+}
+
+/* PET CARD LOGIC */
+.pet-card {
+  width: 240px;
+  border-radius: 14px;
+  /* border-color: #000000;
+  border-width: 1px;
+  border-style: solid; */
+  /* background-color: white; */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.pet-card:hover {
+  transform: translateY(-4px);
+}
+
+.pet-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background-color: #eee;
+}
+
+.species-label {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background-color: #444;
+  color: white;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  z-index: 2;
+}
+
+.animal-alt-overlay {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  width: 100%;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.6);
+  color: black;
+  font-size: 14px;
+  text-align: left;
+  z-index: 1;
+  white-space: normal;
+}
+
+.pet-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #ddd;
+}
+
+.pet-info {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; */
+}
+
+.pet-breed-age {
+  font-size: 14px;
+  color: #333;
+}
+
+.pet-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pet-price {
+  font-size: 14px;
+  font-weight: bold;
+  color: #222;
+}
+
+.pet-button {
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pet-button:hover {
+  background-color: #919191;
 }

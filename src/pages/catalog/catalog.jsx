@@ -89,39 +89,42 @@ function Catalog() {
                         <p>Loading...</p>
                     ) : (
                         dbInfo.map(animal => (
-                            <div key={animal.id} className="catalog-item">
-                                <div className="species-label">
-                                    {Object.entries(speciesMap).find(([key, value]) => value === animal.species_id)?.[0] || "?"}
-                                </div>
-
-                                {imgError[animal.id] && (
-                                    <div className="animal-alt-overlay">
-                                        {animal.name || 'No photo'}
+                            <div key={animal.id} className="pet-card">
+                                <div className="pet-image-wrapper">
+                                    <div className="species-label">
+                                        {Object.entries(speciesMap).find(([key, value]) => value === animal.species_id)?.[0] || "?"}
                                     </div>
-                                )}
-                                <img
-                                    src={animal.mongo_image_id ? `http://localhost:5000/image/${animal.mongo_image_id}` : '/placeholder.jpg'}
-                                    className="animal-image"
-                                    // alt={animal.name || 'No photo'}
-                                    onError={() =>
-                                        setImgError(prev => ({ ...prev, [animal.id]: true }))
-                                    }
-                                />
 
-                                <div className="info-overlay">
-                                    {animal.breed?.name && <div>{animal.breed.name}</div>}
-                                    {animal.age != null && <div>{animal.age} years old</div>}
+                                    {imgError[animal.id] && (
+                                        <div className="animal-alt-overlay">
+                                            {animal.name || 'No photo'}
+                                        </div>
+                                    )}
+
+                                    <img
+                                        src={animal.mongo_image_id ? `http://localhost:5000/image/${animal.mongo_image_id}` : '/placeholder.jpg'}
+                                        alt={animal.name || 'No photo'}
+                                        className="pet-image"
+                                        onError={() =>
+                                            setImgError(prev => ({ ...prev, [animal.id]: true }))
+                                        }
+                                    />
                                 </div>
 
-                                <div className="catalog-item-footer">
-                                    <div className="price-tag">{animal.cena ? `${animal.cena} €` : ""}</div>
-                                    <button className="adopt-button" onClick={() => window.open(animal.external_url, '_blank')}>
-                                        To form
-                                    </button>
+                                <div className="pet-info">
+                                    <div className="pet-breed-age">
+                                        {animal.breed?.name && <span>{animal.breed.name}</span>}
+                                        {animal.age != null && <span> • {animal.age} years old</span>}
+                                    </div>
+
+                                    <div className="pet-bottom">
+                                        <span className="pet-price">{animal.cena ? `${animal.cena} €` : ""}</span>
+                                        <button className="pet-button" onClick={() => window.open(animal.external_url, '_blank')}>
+                                            To form
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-
-
                         ))
                     )}
                 </div>
