@@ -1,6 +1,7 @@
 import './about.css';
 import gigachad from '../../assets/about/gigachad.jpg';
 import markImage from '../../assets/about/mark.jpg';
+
 function About() {
     return (
         <div className="about">
@@ -13,20 +14,20 @@ function About() {
                     </div>
                 </div>
                 <div class="alan-avatar">
-                    
-                        <div class="alan-group">
-                            <img src={gigachad} class="alan" alt="Alan Arzumanyan" />
-                            <p class="name">Alans Arzumanjans</p>
-                            <p class="role">Galvenais sigma progrāmetājs</p>
-                        </div>
-                    
+
+                    <div class="alan-group">
+                        <img src={gigachad} class="alan" alt="Alan Arzumanyan" />
+                        <p class="name">Alans Arzumanjans</p>
+                        <p class="role">Galvenais sigma progrāmetājs</p>
+                    </div>
+
                 </div>
                 <div class="mark-avatar">
-                        <div class="group">
-                            <img src={markImage} class="mark" alt="Mark Korobkin" />
-                            <p class="name">Mark Korobkin</p>
-                            <p class="role">Direktors</p>
-                        </div>
+                    <div class="group">
+                        <img src={markImage} class="mark" alt="Mark Korobkin" />
+                        <p class="name">Mark Korobkin</p>
+                        <p class="role">Direktors</p>
+                    </div>
                 </div>
                 <div class="our-mission-frame">
                     <div class="frame-1">
