@@ -1,3 +1,14 @@
+body {
+  --background-color: #e3f2fd;
+  --footer-text-color: #000;
+  
+}
+
+body [data-theme='dark'] {
+  --background-color: #888;
+  --footer-text-color: #fff;
+}
+
 .logo {
     flex-grow: 0;
     flex-shrink: 1;
@@ -12,7 +23,7 @@
     flex-basis: auto;
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
   }
@@ -21,8 +32,9 @@
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
-    
-
+    background-color: var(--background-color);
+    font-family: var(--font-family-roboto);
+    font-size: 12px;
     padding-top: 10px;
   }
 
@@ -57,7 +69,6 @@
     text-decoration: none;
     text-transform: none;
     text-align: center;
-    color: var(--text-black);
   }
 
 .node-1 {
@@ -73,7 +84,7 @@
     flex-basis: auto;
     
     opacity: 0.5;
-    font-family: var(--font-family-roboto);
+    
     font-weight: normal;
     font-size: 12px;
     line-height: 28px;
@@ -96,7 +107,6 @@
     text-decoration: none;
     text-transform: none;
     text-align: center;
-    color: var(--text-black);
   }
 
   .terms-footer {
@@ -112,7 +122,6 @@
     text-decoration: none;
     text-transform: none;
     text-align: center;
-    color: var(--text-black);
   }
   .privacy-footer {
     flex-grow: 0;
@@ -120,18 +129,20 @@
     flex-basis: auto;
     
     opacity: 0.5;
-    font-family: var(--font-family-roboto);
     font-weight: normal;
     font-size: 12px;
     line-height: 28px;
     text-decoration: none;
     text-transform: none;
     text-align: center;
-    color: var(--text-black);
   }
 
   .brightness {
     max-width: 50px;
     height: auto;
     width: 50px;
+  }
+
+  .footer-text {
+    color: var(--footer-text-color);
   }

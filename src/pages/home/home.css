@@ -3,9 +3,25 @@
     --font-family-inter: 'Inter', sans-serif;
     --text-black: rgba(0, 0, 0, 0.5);
     --text-white: rgba(255, 255, 255, 1);
-    --background-color: rgba(227, 242, 253, 1);
   }
   
+  body {
+    --background-color: #e3f2fd;
+    --logo-color: #0a142f;
+    --home-text-color: #000;
+    --secondary-button: #fff;
+    --news-frame: #1edcf9;
+    --article-subtitle: rgba(0, 0, 0, 0.5);
+  }
+
+  body [data-theme='dark'] {
+    --background-color: #0c5183;
+    --home-text-color: #fff;
+    --secondary-button: #333;
+    --news-frame: #137787;
+    --article-subtitle: rgba(255, 255, 255, 0.5);
+  }
+
   .text-black {
     color: var(--text-black);
   }
@@ -36,7 +52,7 @@
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
-    fill: rgba(10, 20, 47, 1);
+    fill: var(--logo-color);
     border: none;
     outline: none;
   }
@@ -124,7 +140,6 @@
     line-height: 100px;
     text-decoration: none;
     text-transform: none;
-    color: var(--text-black);
   }
   
   .decoration-1 {
@@ -153,7 +168,7 @@
     text-decoration: none;
     text-transform: none;
     text-align: center;
-    color: var(--text-black);
+    color: var(--home-text-color);
   }
   
   .review-subheader {
@@ -167,10 +182,10 @@
     text-decoration: none;
     text-transform: none;
     text-align: center;
-    color: var(--text-black);
+    color: var(--home-text-color);
   }
   
-  .avatar-1 {
+  .avatar {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
@@ -188,7 +203,7 @@
     line-height: 20px;
     text-decoration: none;
     text-transform: none;
-    color: var(--text-black);
+    color: var(--home-text-color);
   }
   
   .user-name {
@@ -254,15 +269,7 @@
     line-height: 24px;
     text-decoration: none;
     text-transform: none;
-    color: var(--text-black);
-  }
-  
-  .avatar-2 {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 32px;
+    color: var(--home-text-color);
   }
   
   .user-2 {
@@ -278,19 +285,11 @@
     margin-bottom: -10%;
   }
   
-  .avatar-3 {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 32px;
-  }
-  
   .reviews {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
-    background-color: rgba(227, 242, 253, 1);
+    background-color: var(--background-color);
     padding-bottom: 20%;
     gap: 200px;
   }
@@ -321,7 +320,7 @@
     line-height: 48px;
     text-decoration: none;
     text-transform: none;
-    color: var(--text-black);
+    color: var(--home-text-color);
   }
   
   .news-subtitle {
@@ -334,7 +333,7 @@
     line-height: 24px;
     text-decoration: none;
     text-transform: none;
-    color: var(--text-black);
+    color: var(--home-text-color);
   }
   
   .emoji {
@@ -347,7 +346,7 @@
     line-height: 100px;
     text-decoration: none;
     text-transform: none;
-    color: var(--text-black);
+    color: var(--home-text-color);
   }
 
   .article-title {
@@ -360,7 +359,7 @@
     line-height: 24px;
     text-decoration: none;
     text-transform: none;
-    color: var(--text-black);
+    color: var(--home-text-color);
   }
   
   .article-subtitle {
@@ -373,7 +372,7 @@
     line-height: 24px;
     text-decoration: none;
     text-transform: none;
-    color: rgba(0, 0, 0, 0.5);
+    color: var(--article-subtitle);
     position: relative;
     top: 10px;
     padding-bottom: 10px;
@@ -389,34 +388,8 @@
     line-height: 36px;
     text-decoration: none;
     text-transform: none;
-    color: var(--text-black);
+    color: var(--home-text-color);
     
-  }
-  
-  .text-17 {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    font-family: var(--font-family-roboto);
-    font-weight: normal;
-    font-size: 62.5px;
-    line-height: 100px;
-    text-decoration: none;
-    text-transform: none;
-    color: var(--text-black);
-  }
-  
-  .text-18 {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    font-family: var(--font-family-roboto);
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 28px;
-    text-decoration: none;
-    text-transform: none;
-    color: var(--text-black);
   }
   
   .text-19 {
@@ -458,7 +431,7 @@
     color: var(--text-black);
   }
   
-  .text-22 {
+  .news-picture {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
@@ -468,7 +441,7 @@
     line-height: 24px;
     text-decoration: none;
     text-transform: none;
-    color: var(--text-black);
+    color: var(--home-text-color);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -503,7 +476,7 @@
     flex-basis: auto;
     padding-top: 3%;
     padding-left: 5%;
-    background-color: rgba(30, 220, 249, 1);
+    background-color: var(--news-frame);
     
   }
 
@@ -524,7 +497,7 @@
     background-color: rgba(17, 156, 177, 1);
   }
   
-  .text-23 {
+  .site-title {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
@@ -534,7 +507,7 @@
     line-height: 100px;
     text-decoration: none;
     text-transform: none;
-    color: var(--text-black);
+    color: var(--home-text-color);
     margin-top: -7.5%;
     position: relative;
     left: 10%;
@@ -550,7 +523,7 @@
     right: 20%;
   }
   
-  .text-24 {
+  .site-subtitle {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
@@ -559,12 +532,12 @@
     font-size: 24px;
     text-decoration: none;
     text-transform: none;
-    color: var(--text-black);
+    color: var(--home-text-color);
     margin-left: -20%;
     margin-bottom: -1%;
   }
   
-  .text-25 {
+  .count-number {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
@@ -573,10 +546,10 @@
     font-size: 24px;
     text-decoration: none;
     text-transform: none;
-    color: var(--text-black);
+    color: var(--home-text-color);
   }
   
-  .text-26 {
+  .count-animal {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
@@ -585,31 +558,7 @@
     font-size: 16px;
     text-decoration: none;
     text-transform: none;
-    color: var(--text-black);
-  }
-  
-  .text-27 {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    font-family: var(--font-family-inter);
-    font-weight: 700;
-    font-size: 24px;
-    text-decoration: none;
-    text-transform: none;
-    color: var(--text-black);
-  }
-  
-  .text-28 {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    font-family: var(--font-family-inter);
-    font-weight: normal;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: none;
-    color: var(--text-black);
+    color: var(--home-text-color);
   }
   
   .catcount {
@@ -636,19 +585,6 @@
     flex-basis: auto;
   }
   
-  .text-29 {
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    font-family: var(--font-family-roboto);
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    text-decoration: none;
-    text-transform: none;
-    color: var(--text-black);
-  }
-  
   .secondary {
     display: flex;
     flex-direction: column;
@@ -659,7 +595,8 @@
     flex-shrink: 1;
     flex-basis: auto;
     border: 1px solid black;
-    background-color: white;
+    background-color: var(--secondary-button);
+    color: var(--home-text-color);
     border-radius: 8px;
     font-size: 16px;
     width: 500%;
@@ -719,7 +656,7 @@
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
-    background-color: rgba(227, 242, 253, 1);
+    background-color: var(--background-color);
     display: flex;
     align-items: center;
   }
@@ -742,7 +679,7 @@
     line-height: 24px;
     text-decoration: none;
     text-transform: none;
-    color: var(--text-black);
+    color: var(--home-text-color);
   }
   
   .text-31 {
@@ -840,7 +777,7 @@
     display: table;
   }
 
-  .App .square-1 {
+  .home .square-1 {
     width: 20px;
     height: 20px;
     background-color: #119cb1;
@@ -850,7 +787,7 @@
     left: 50%;
   }
 
-  .App .square-2 {
+  .home .square-2 {
     width: 20px;
     height: 20px;
     background-color: #119cb1;
@@ -860,7 +797,7 @@
     left: 90%;
   }
 
-  .App .square-3 {
+  .home .square-3 {
     width: 20px;
     height: 20px;
     background-color: #119cb1;
@@ -870,7 +807,7 @@
     left: 85%;
   }
 
-  .App .square-4 {
+  .home .square-4 {
     width: 20px;
     height: 20px;
     background-color: #119cb1;
@@ -880,7 +817,7 @@
     left: 11%;
   }
 
-  .App .square-5 {
+  .home .square-5 {
     width: 20px;
     height: 20px;
     background-color: #119cb1;
@@ -890,7 +827,7 @@
     left: 90%;
   }
 
-  .App .square-6 {
+  .home .square-6 {
     width: 20px;
     height: 20px;
     background-color: #119cb1;
@@ -900,7 +837,7 @@
     left: 7.5%;
   }
 
-  .App .square-7 {
+  .home .square-7 {
     width: 20px;
     height: 20px;
     background-color: #119cb1;
@@ -910,7 +847,7 @@
     left: 85%;
   }
 
-  .App .square-8 {
+  .home .square-8 {
     width: 20px;
     height: 20px;
     background-color: #119cb1;
@@ -920,7 +857,7 @@
     left: 10%;
   }
 
-  .App .square-9 {
+  .home .square-9 {
     width: 20px;
     height: 20px;
     background-color: #119cb1;
@@ -930,7 +867,7 @@
     left: 49%;
   }
 
-  .App .square-10 {
+  .home .square-10 {
     width: 20px;
     height: 20px;
     background-color: #119cb1;
@@ -940,7 +877,7 @@
     left: 5%;
   }
 
-  .App .square-11 {
+  .home .square-11 {
     width: 20px;
     height: 20px;
     background-color: #119cb1;
@@ -950,7 +887,7 @@
     left: 85%;
   }
 
-  .App .square-12 {
+  .home .square-12 {
     width: 20px;
     height: 20px;
     background-color: #119cb1;
@@ -960,7 +897,7 @@
     left: 27.5%;
   }
 
-  .App .square-13 {
+  .home .square-13 {
     width: 20px;
     height: 20px;
     background-color: #119cb1;
@@ -970,7 +907,7 @@
     left: 80%;
   }
 
-  .App .square-14 {
+  .home .square-14 {
     width: 20px;
     height: 20px;
     background-color: #119cb1;
@@ -980,7 +917,7 @@
     left: 32.5%;
   }
 
-  .App .square-15 {
+  .home .square-15 {
     width: 20px;
     height: 20px;
     background-color: #119cb1;
@@ -990,7 +927,7 @@
     left: 40%;
   }
 
-  .App .square-16 {
+  .home .square-16 {
     width: 20px;
     height: 20px;
     background-color: #119cb1;
@@ -1000,7 +937,7 @@
     left: 23%;
   }
 
-  .App .square-17 {
+  .home .square-17 {
     width: 20px;
     height: 20px;
     background-color: #119cb1;
@@ -1010,7 +947,7 @@
     left: 38%;
   }
 
-  .App .square-18 {
+  .home .square-18 {
     width: 20px;
     height: 20px;
     background-color: #119cb1;

@@ -1,24 +1,28 @@
 import "./footer.css";
-import { useState, useEffect } from "react";
-import Toggle from "react-toggle";
-import { useMediaQuery } from "react-responsive";
 import facebookLogo from "../../assets/footer/facebook.png";
 import twitterLogo from "../../assets/footer/twitter.png";
 import vimeoLogo from "../../assets/footer/vimeo.png";
-import useLocalStorage from 'use-local-storage';
+import useLocalStorage from "use-local-storage";
 
 function Footer() {
-    const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
+  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [theme, setTheme] = useLocalStorage(
+    "theme",
+    defaultDark ? "dark" : "light"
+  );
+  const switchTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+  };
 
   return (
     <div class="footer-1" data-theme={theme}>
       <div class="footer-2">
-        <input type="checkbox" onChange={setTheme} />
+        <button onClick={switchTheme}>
+          Switch to {theme === "light" ? "dark" : "light"} theme
+        </button>
         <a href="/contact">
-          <p class="contact-footer">
-            <span class="text-black">Contacts</span>
-          </p>
+          <p class="footer-text">Contacts</p>
         </a>
         <div class="node-1">
           <a href="https://facebook.com">
@@ -32,24 +36,16 @@ function Footer() {
           </a>
         </div>
         <a href="/about">
-          <p class="about-footer">
-            <span class="text-black">About us</span>
-          </p>
+          <p class="footer-text">About us</p>
         </a>
       </div>
       <div class="footer-3">
         <div class="sub-footer">
-          <p class="terms-footer">
-            <span class="text-black">Terms of Service</span>
+          <p class="footer-text">Terms of Service</p>
+          <p class="footer-text">
+            © 2025 Pet Adoption Center. All Rights Reserved.
           </p>
-          <p class="text-footer">
-            <span class="text-black">
-              © 2025 Pet Adoption Center. All Rights Reserved.
-            </span>
-          </p>
-          <p class="privacy-footer">
-            <span class="text-black">Privacy Policy</span>
-          </p>
+          <p class="footer-text">Privacy Policy</p>
         </div>
       </div>
     </div>

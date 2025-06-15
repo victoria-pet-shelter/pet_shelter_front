@@ -5,275 +5,89 @@ import useLocalStorage from 'use-local-storage';
 function Catalog() {
     const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
-    const [dbInfo, setDbInfo] = useState({ species: '', breed: '', age: 0, imageLink: '' });
-    const [species, setSpecies] = useState("Dog");
+    const [dbInfo, setDbInfo] = useState([]);
+    const [selectedSpecies, setSelectedSpecies] = useState('All');
+    const [loading, setLoading] = useState(true);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
+
+    const fetchData = (page = 1) => {
+        setLoading(true);
+        fetch(`http://localhost:5000/pets?page=${page}&pageSize=25`)
+            .then(response => response.json())
+            .then(data => {
+                setDbInfo(data.pets);
+                setCurrentPage(data.currentPage);
+                setTotalPages(data.totalPages);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error('Error fetching animals: ', error);
+                setLoading(false);
+            });
+    };
+
+    useEffect(() => {
+        fetchData(currentPage);
+    }, [currentPage]);
+
+    const handleSpeciesSelect = (species) => {
+        setSelectedSpecies(species);
+    };
+
+    const handlePageChange = (direction) => {
+        if (direction === 'prev' && currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        } else if (direction === 'next' && currentPage < totalPages) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
+    const filteredAnimals = selectedSpecies === 'All'
+        ? dbInfo
+        : dbInfo.filter(animal => animal.species?.name?.toLowerCase() === selectedSpecies.toLowerCase());
 
     return (
         <div className="catalog" data-theme={theme}>
             <title>Catalog</title>
-            <div class="square-1"></div>
-            <div class="square-2"></div>
-            <div class="square-3"></div>
-            <div class="square-4"></div>
-            <div class="square-5"></div>
-            <div class="square-6"></div>
-            <div class="square-7"></div>
-            <div class="square-8"></div>
-            <div class="square-9"></div>
-            <div class="square-10"></div>
-            <div class="square-11"></div>
-            <div class="square-12"></div>
-            <div class="square-13"></div>
-            <div class="square-14"></div>
-            <div class="square-15"></div>
-            <div class="square-16"></div>
-            <div class="square-17"></div>
-            <p class="paws-1">🐾</p>
-            <p class="paws-2">🐾</p>
-            <p class="paws-3">🐾</p>
-            <p class="paws-4">🐾</p>
-            <p class="paws-5">🐾</p>
-            <div class="sidebar">
-                <div class="sidebar-item">
-                    <div class="sidebar-item-icon">
-                        <p>🐶</p>
+            {[...Array(17)].map((_, i) => <div key={i} className={`square-${i + 1}`}></div>)}
+            {[...Array(5)].map((_, i) => <p key={i} className={`paws-${i + 1}`}>🐾</p>)}
+
+            <div className="sidebar">
+                {['All', 'Dog', 'Cat', 'Bird', 'Exotic', 'Rodent', 'Fish', 'Farm', 'Reptile'].map((type, index) => (
+                    <div className="sidebar-item" key={index} onClick={() => handleSpeciesSelect(type)}>
+                        <div className="sidebar-item-icon"><p>🐾</p></div>
+                        <p className="sidebar-item-name">{type}</p>
                     </div>
-                    <a onClick={() => setSpecies("Dog")}><p class="sidebar-item-name">Dog</p></a>
-                </div>
-                <div class="sidebar-item">
-                    <div class="sidebar-item-icon">
-                        <p>🐱</p>
-                    </div>
-                    <a onClick={() => setSpecies("Cat")}><p class="sidebar-item-name">Cat</p></a>
-                </div>
-                <div class="sidebar-item">
-                    <div class="sidebar-item-icon">
-                        <p>🐦</p>
-                    </div>
-                    <a onClick={() => setSpecies("Bird")}><p class="sidebar-item-name">Bird</p></a>
-                </div>
-                <div class="sidebar-item">
-                    <div class="sidebar-item-icon">
-                            <p>🦥</p>
-                    </div>
-                    <a onClick={() => setSpecies("Exotic")}><p class="sidebar-item-name">Exotic</p></a>
-                </div>
+                ))}
             </div>
-            <div class="catalog-content">
-                <div class="catalog-items">
-                    {/* Example items, replace with dynamic content as needed */}
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
+
+            <div className="catalog-content">
+                <div className="catalog-items">
+                    {loading ? (
+                        <p>Loading...</p>
+                    ) : (
+                        filteredAnimals.map(animal => (
+                            <div key={animal.id} className="catalog-item">
+                                <p className="animal-species">{animal.species?.name}</p>
+                                <div className="image-box">
+                                    <img
+                                    src={animal.mongo_image_id ? `http://localhost:5000/image/${animal.mongo_image_id}` : '/placeholder.jpg'}
+                                    className="animal-image"
+                                        alt={animal.name || 'No photo'}
+                                    />
+                                </div>
+                                <p className="breed-age">{animal.breed?.name || 'Unknown'}, {animal.age || 'Unknown age'}</p>
+                                <button className="adopt-button" onClick={() => window.open(animal.external_url, '_blank')}>To form</button>
+                            </div>
+                        ))
+                    )}
                 </div>
-                <div class="catalog-items-2">
-                    {/* Example items, replace with dynamic content as needed */}
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                </div>
-                <div class="catalog-items-2">
-                    {/* Example items, replace with dynamic content as needed */}
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                </div>
-                <div class="catalog-items">
-                    {/* Example items, replace with dynamic content as needed */}
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                </div>
-                <div class="catalog-items-2">
-                    {/* Example items, replace with dynamic content as needed */}
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
-                    <div class="catalog-item">
-                        <p class="animal-species">{species}</p>
-                        <div class="image-box">
-                            <img src="{image}" class="animal-image" alt="Image" />
-                        </div>
-                        <p class="breed-age">Breed, Age</p>
-                        <button class="adopt-button">To form</button>
-                    </div>
+
+                <div className="pagination">
+                    <button disabled={currentPage === 1} onClick={() => handlePageChange('prev')}>Previous</button>
+                    <span>Page {currentPage} of {totalPages}</span>
+                    <button disabled={currentPage === totalPages} onClick={() => handlePageChange('next')}>Next</button>
                 </div>
             </div>
         </div>

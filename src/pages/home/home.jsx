@@ -3,10 +3,14 @@ import dogsImage from '../../assets/home/dogs.jpg';
 import starsImage from '../../assets/home/stars.svg';
 //import brightnessSwitch from '../../assets/home/brightness-switch.svg';
 //import lightIcon from '../../assets/home/light-icon.svg';
+import useLocalStorage from 'use-local-storage';
 
 function Home() {
+  const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
+
   return (
-    <div className="App">
+    <div className="home" data-theme={theme}>
       <div class="square-1"></div>
       <div class="square-2"></div>
       <div class="square-3"></div>
@@ -28,89 +32,89 @@ function Home() {
       <div class="home">
         <title>Pet Shelter</title>
         <div class="news-frame">
-          <div class="text-23"><span class="text-black">Welcome to the Pet Center</span></div>
+          <div class="site-title">Welcome to the Pet Center</div>
           
-          <p class="text-24"><span class="text-black">Every year, the following come to “Big<br />Homes”:</span></p>
+          <p class="site-subtitle">Every year, the following come to “Big<br />Homes”:</p>
           <div class="count">
             <div class="dogcount">
-              <p class="text-25"><span class="text-black">69</span></p>
-              <p class="text-26"><span class="text-black">dogs</span></p>
+              <p class="count-number">69</p>
+              <p class="count-animal">dogs</p>
             </div>
             <div class="catcount">
-              <p class="text-27"><span class="text-black">420</span></p>
-              <p class="text-28"><span class="text-black">cats</span></p>
+              <p class="count-number">420</p>
+              <p class="count-animal">cats</p>
             </div>
           </div>
           <div class="button">
-            <a href="/register"><button class="secondary"><span class="text-black">Register</span></button></a>
-            <a href="/login"><button class="primary"><span class="text-black">Login</span></button></a>
+            <a href="/register"><button class="secondary">Register</button></a>
+            <a href="/login"><button class="primary">Login</button></a>
           </div>
           <img src={dogsImage} class="node-2" alt="Dogs" />
           
         </div>
         <div class="some-frame" id="news">
           <div class="slice-1"></div>
-          <p class="news-title"><span class="text-black"><b>News and Articles</b></span></p>
-          <p class="news-subtitle"><span class="text-black">Stay updated with our latest news and pet care advice.</span></p>
+          <p class="news-title"><b>News and Articles</b></p>
+          <p class="news-subtitle">Stay updated with our latest news and pet care advice.</p>
           <div class="news-items">
             <div class="news-item">
-              <p class="emoji"><span class="text-black">📰</span></p>
+              <p class="emoji">📰</p>
               <p class="article-title">New Adoption Policies</p>
               <p class="article-subtitle">Learn about our updated<br />procedures</p>
-              <p class="article-date"><span class="text-black">Nov 12, 2022</span></p>
+              <p class="article-date">Nov 12, 2022</p>
             </div>
             <div class="news-item">
-              <p class="emoji"><span class="text-black">🐾</span></p>
-              <p class="article-title"><span class="text-black">Pet Care Tips</span></p>
+              <p class="emoji">🐾</p>
+              <p class="article-title">Pet Care Tips</p>
               <p class="article-subtitle">Helpful advice for pet owners</p>
               <p class="article-date">Oct 30, 2022</p>
             </div>
             <div class="image-container">
               <div class="image">
-                <p class="text-22"><span class="text-black">News picture</span></p>
+                <p class="news-picture">News picture</p>
               </div>
             </div>
           </div>
         </div>
         <div class="reviews" id="reviews">
-          <p class="review-header"><span class="text-black">Customer reviews</span></p>
-          <p class="review-subheader"><span class="text-black">See what our happy adopters have to say about their new pets.</span></p>
+          <p class="review-header">Customer reviews</p>
+          <p class="review-subheader">See what our happy adopters have to say about their new pets.</p>
           <div class="user-reviews">
             <div class="user-1">
               <div class="avatar-frame">
-                <div class="avatar-1"></div>
+                <div class="avatar"></div>
               </div>
               <div class="user-name">
-                <p class="name-text"><span class="text-black">Jessica</span></p>
+                <p class="name-text">Jessica</p>
               </div>
               <div class="user-stars">
                 <img src={starsImage} class="stars" alt="Stars" />
               </div>
-              <p class="review"><span class="text-black">I adopted my best friend from here! Such a wonderful experience.</span></p>
+              <p class="review">I adopted my best friend from here! Such a wonderful experience.</p>
             </div>
             <div class="user-2">
               <div class="avatar-frame">
-                <div class="avatar-2"></div>
+                <div class="avatar"></div>
               </div>
               <div class="user-name">
-                <p class="name-text"><span class="text-black">Michael</span></p>
+                <p class="name-text">Michael</p>
               </div>
               <div class="user-stars">
                 <img src={starsImage} class="stars" alt="Stars" />
               </div>
-              <p class="review"><span class="text-black">Great selection of animals and excellent service.</span></p>
+              <p class="review">Great selection of animals and excellent service.</p>
             </div>
             <div class="user-1">
               <div class="avatar-frame">
-                <div class="avatar-3"></div>
+                <div class="avatar"></div>
               </div>
               <div class="user-name">
-                <p class="name-text"><span class="text-black">Emily</span></p>
+                <p class="name-text">Emily</p>
               </div>
               <div class="user-stars">
                 <img src={starsImage} class="stars" alt="Stars" />
               </div>
-              <p class="review"><span class="text-black">Couldn't be happier with my new furry companion.</span></p>
+              <p class="review">Couldn't be happier with my new furry companion.</p>
             </div>
           </div>
         </div>
