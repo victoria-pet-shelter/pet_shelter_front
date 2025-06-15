@@ -2,10 +2,16 @@ import React, { useState } from 'react';
 import "./login.css";
 import squaresImage from '../../assets/log-reg/squares.svg';
 // import eyeImage from '../../assets/log-reg/eye.svg';
+import useLocalStorage from 'use-local-storage';
 
 function Login() {
     const [formData, setFormData] = useState({ email: '', password: '' });
     const [message, setMessage] = useState('');
+    const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const [theme, setTheme] = useLocalStorage(
+        "theme",
+        defaultDark ? "dark" : "light"
+    );
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,11 +26,12 @@ function Login() {
             body: JSON.stringify(formData),
         });
 
-        const data = await response.json();
         if (response.ok) {
             // const exists = data.some(user => user.email === formData.email && user.password === formData.password);
             
             setMessage("User logged in successfully!");
+            await setTimeout(2000);
+            window.location.href = "/";
             
         } else {
             setMessage("Error logging in user.");
@@ -35,7 +42,7 @@ function Login() {
     };
 
     return (
-        <div className="login">
+        <div className="login" data-theme={theme}>
             <title>Login</title>
             <img src={squaresImage} className="squares" alt="Squares" />
             <div className="logo-group">
@@ -44,9 +51,9 @@ function Login() {
             <div className="login-form">
                 <div className="group-1">
                     <div className="group-2">
-                        <p class="welcome-title"><span class="text-rgb-1">Welcome to Pet Shelter</span></p>
+                        <p class="welcome-title">Welcome to Pet Shelter</p>
                         <div className="node">
-                            <p class="welcome-subtitle"><span class="text-rgb-1">Login. No account? <a href="/register">Register</a></span></p>
+                            <p class="welcome-subtitle">Login. No account? <a href="/register">Register</a></p>
                         </div>
                     </div>
                 </div>
@@ -54,19 +61,19 @@ function Login() {
                     <form onSubmit={handleSubmit}>
                         <div class="text-field">
                             <label class="input-label">E-mail</label>
-                            <span class="text-rgb-2"><input type="email" name="email" class="input-field" value={formData.email} onChange={handleChange} /></span>
+                            <input type="email" name="email" class="input-field" value={formData.email} onChange={handleChange} />
                         </div>
                         <div className="password-hide-toggle">
                             <div className="eye-icon">
                                 <img src="{eyeImage}" className="eye" alt="Eye" />
                             </div>
-                            <p class="hide-text"><span class="text-rgb-1">Hide</span></p>
+                            <p class="hide-text">Hide</p>
                         </div>
                         <div class="text-field">
                             <label class="input-label">Password</label>
-                            <span class="text-rgb-2"><input type="password" name="password" class="input-field" value={formData.password} onChange={handleChange} /></span>
+                            <input type="password" name="password" class="input-field" value={formData.password} onChange={handleChange} />
                         </div>
-                        <p class="forgot-password"><span class="text-rgb-1">Forgot password?</span></p>
+                        <p class="forgot-password">Forgot password?</p>
                         <button className="login-button" type="submit">Log in</button>
                         {message && <p className="message">{message}</p>}
                     </form>

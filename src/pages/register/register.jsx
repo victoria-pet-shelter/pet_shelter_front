@@ -1,6 +1,5 @@
 import "./register.css";
-import React, { useState } from "react";
-// import { Link } from "react-router-dom";
+import { useState } from "react";
 import squaresImage from "../../assets/log-reg/squares.svg";
 //import eyeImage from '../../assets/log-reg/eye.svg';
 
@@ -9,7 +8,7 @@ function Register() {
     name: "",
     email: "",
     password: "",
-    role: ""
+    role: "user"
   });
 
   const [message, setMessage] = useState("");
@@ -37,6 +36,8 @@ function Register() {
       //   const data = await response.json();
       if (response.ok) {
         setMessage("User registered successfully!");
+        await setTimeout(2000);
+        window.location.href = "/";
       } else {
         setMessage("Error registering user.");
       }
