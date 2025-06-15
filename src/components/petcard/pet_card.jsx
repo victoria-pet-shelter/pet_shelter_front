@@ -44,7 +44,7 @@ function PetCard() {
                         {pet.description || 'No description available.'}
                     </p>
 
-                    <button className="pet-more-btn" onClick={() => window.open(`/pet/${pet.id}`, '_blank')}>
+                    <button className="pet-more-btn" onClick={() => window.open(pet.external_url, '_blank')}>
                         More Details
                     </button>
                 </div>
