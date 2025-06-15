@@ -19,7 +19,7 @@ function Contact() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch("http://localhost:5000/contacts", {
+            const res = await fetch("http://localhost:5000/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
@@ -39,7 +39,7 @@ function Contact() {
         <div className="contact" data-theme={theme}>
             <title>Contact us</title>
             <div class="map-square"></div>
-            <img src={map} class="map" alt="Map" />
+            {/* <img src={map} class="map" alt="Map" /> */}
 
             <div class="square-1"></div>
             <div class="square-2"></div>
