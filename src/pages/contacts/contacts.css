@@ -117,6 +117,8 @@ img {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
+    width: 90%;
+    padding-left: 80px;
 }
 
 .form-button {
@@ -135,6 +137,18 @@ img {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 6px;
     padding: 10px;
+    margin-left: 80px;
+}
+
+.form-button:hover {
+  background-color: rgb(54, 54, 54);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.form-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .divider {
@@ -379,7 +393,7 @@ img {
 .map-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #1ec7e5;
+  background-color: black;
   color: white;
   font-family: var(--font-family-roboto);
   font-size: 16px;
@@ -393,7 +407,7 @@ img {
 }
 
 .map-button:hover {
-  background-color: #1565c0;
+  background-color: rgb(54, 54, 54);
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
