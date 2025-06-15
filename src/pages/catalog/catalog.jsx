@@ -69,17 +69,19 @@ function Catalog() {
                     ) : (
                         filteredAnimals.map(animal => (
                             <div key={animal.id} className="catalog-item">
-                                <p className="animal-species">{animal.species?.name}</p>
-                                <div className="image-box">
-                                    <img
+                                <img
                                     src={animal.mongo_image_id ? `http://localhost:5000/image/${animal.mongo_image_id}` : '/placeholder.jpg'}
                                     className="animal-image"
-                                        alt={animal.name || 'No photo'}
-                                    />
+                                    alt={animal.name || 'No photo'}
+                                />
+                                <div className="info-overlay">
+                                    {animal.breed?.name && <span>{animal.breed.name}</span>}
+                                    {animal.age != null && <span>{animal.breed?.name ? ', ' : ''}{animal.age} years old</span>}
                                 </div>
-                                <p className="breed-age">{animal.breed?.name || 'Unknown'}, {animal.age || 'Unknown age'}</p>
+
                                 <button className="adopt-button" onClick={() => window.open(animal.external_url, '_blank')}>To form</button>
                             </div>
+
                         ))
                     )}
                 </div>
