@@ -56,6 +56,7 @@ body [data-theme='dark'] {
     flex-direction: row;
     font-family: var(--font-family-roboto);
     background-color: var(--catalog-background-color);
+    /* position: relative; */
 }
 
 .catalog-items {
@@ -470,12 +471,14 @@ body [data-theme='dark'] {
   /* border-color: #000000;
   border-width: 1px;
   border-style: solid; */
-  /* background-color: white; */
+  background-color: --catalog-background-color;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease;
+  z-index: 1;
+  cursor: pointer;
 }
 
 .pet-card:hover {
@@ -507,7 +510,6 @@ body [data-theme='dark'] {
   left: 0;
   width: 100%;
   padding: 6px 10px;
-  background: rgba(255, 255, 255, 0.6);
   color: black;
   font-size: 14px;
   text-align: left;
@@ -527,12 +529,19 @@ body [data-theme='dark'] {
   padding: 5px;
   display: flex;
   flex-direction: column;
-  /* gap: 10px; */
+  justify-content: space-between;
+  gap: 10px;
+  height: 78px;
 }
 
 .pet-breed-age {
   font-size: 14px;
   color: #333;
+  isplay: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .pet-bottom {

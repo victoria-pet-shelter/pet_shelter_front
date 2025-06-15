@@ -21,6 +21,19 @@ function Catalog() {
         Farm: 7,
         Reptile: 8,
     };
+    const formatAge = (months) => {
+        if (!months || isNaN(months)) return null;
+        if (months < 12) {
+            return `${months} months old`;
+        }
+        else if (months > 12) {
+            const years = months / 12;
+            return `${years.toFixed(1)} years old`;
+        }
+        else if (months === 12) {
+            return `1 year old`;
+        }
+    }
 
     const fetchData = (page = 1, species) => {
         setLoading(true);
@@ -106,7 +119,7 @@ function Catalog() {
 
                                     <img
                                         src={animal.mongo_image_id ? `http://localhost:5000/image/${animal.mongo_image_id}` : '/placeholder.jpg'}
-                                        alt={animal.name || 'No photo'}
+                                        // alt={animal.name || 'No photo'}
                                         className="pet-image"
                                         onError={() =>
                                             setImgError(prev => ({ ...prev, [animal.id]: true }))
@@ -117,7 +130,7 @@ function Catalog() {
                                 <div className="pet-info">
                                     <div className="pet-breed-age">
                                         {animal.breed?.name && <span>{animal.breed.name}</span>}
-                                        {animal.age != null && <span> • {animal.age} years old</span>}
+                                        {animal.age != null && <span> • {formatAge(animal.age)}</span>}
                                     </div>
 
                                     <div className="pet-bottom">
