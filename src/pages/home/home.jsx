@@ -4,6 +4,7 @@ import starsImage from '../../assets/home/stars.svg';
 //import brightnessSwitch from '../../assets/home/brightness-switch.svg';
 //import lightIcon from '../../assets/home/light-icon.svg';
 import useLocalStorage from 'use-local-storage';
+import newsImage from '../../assets/news/News Picture.jpg';
 
 function Home() {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -33,7 +34,7 @@ function Home() {
         <title>Pet Shelter</title>
         <div class="news-frame">
           <div class="site-title">Welcome to the Pet Center</div>
-          
+
           <p class="site-subtitle">Every year, the following come to “Big<br />Homes”:</p>
           <div class="count">
             <div class="dogcount">
@@ -50,7 +51,7 @@ function Home() {
             <a href="/login"><button class="primary">Login</button></a>
           </div>
           <img src={dogsImage} class="node-2" alt="Dogs" />
-          
+
         </div>
         <div class="some-frame" id="news">
           <div class="slice-1"></div>
@@ -70,9 +71,10 @@ function Home() {
               <p class="article-date">Oct 30, 2022</p>
             </div>
             <div class="image-container">
-              <div class="image">
+              {/* <div class="image">
                 <p class="news-picture">News picture</p>
-              </div>
+              </div> */}
+              <img src={newsImage} class="news-picture" alt="News picture" />
             </div>
           </div>
         </div>
