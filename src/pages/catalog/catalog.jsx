@@ -62,7 +62,7 @@ function Catalog() {
             setCurrentPage(currentPage + 1);
         }
     };
-
+    const [imgError, setImgError] = useState({});
     useEffect(() => {
         console.log("Received species ids:", dbInfo.map(a => a.species_id));
     }, [dbInfo]);
@@ -90,19 +90,37 @@ function Catalog() {
                     ) : (
                         dbInfo.map(animal => (
                             <div key={animal.id} className="catalog-item">
+                                <div className="species-label">
+                                    {Object.entries(speciesMap).find(([key, value]) => value === animal.species_id)?.[0] || "?"}
+                                </div>
+
+                                {imgError[animal.id] && (
+                                    <div className="animal-alt-overlay">
+                                        {animal.name || 'No photo'}
+                                    </div>
+                                )}
                                 <img
                                     src={animal.mongo_image_id ? `http://localhost:5000/image/${animal.mongo_image_id}` : '/placeholder.jpg'}
                                     className="animal-image"
-                                    alt={animal.name || 'No photo'}
+                                    // alt={animal.name || 'No photo'}
+                                    onError={() =>
+                                        setImgError(prev => ({ ...prev, [animal.id]: true }))
+                                    }
                                 />
+
                                 <div className="info-overlay">
-                                    {animal.breed?.name && <span>{animal.breed.name}</span>}
-                                    {animal.age != null && <span>{animal.breed?.name ? ', ' : ''}{animal.age} years old</span>}
-                                    {animal.cena && <span>{animal.cena} €</span>}
+                                    {animal.breed?.name && <div>{animal.breed.name}</div>}
+                                    {animal.age != null && <div>{animal.age} years old</div>}
                                 </div>
 
-                                <button className="adopt-button" onClick={() => window.open(animal.external_url, '_blank')}>To form</button>
+                                <div className="catalog-item-footer">
+                                    <div className="price-tag">{animal.cena ? `${animal.cena} €` : ""}</div>
+                                    <button className="adopt-button" onClick={() => window.open(animal.external_url, '_blank')}>
+                                        To form
+                                    </button>
+                                </div>
                             </div>
+
 
                         ))
                     )}
