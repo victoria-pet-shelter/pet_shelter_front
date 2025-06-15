@@ -49,7 +49,7 @@ function Contact() {
         }
     };
 
-    const mapCenter = [56.946285, 24.105078]; // Рига
+    const mapCenter = [56.946285, 24.105078]; // Riga
 
     return (
         <div className="contact" data-theme={theme}>

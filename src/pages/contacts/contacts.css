@@ -355,14 +355,14 @@ img {
 
 .map-container {
   width: 40%;
-  height: 300px;
+  height: 320px;
   min-width: 300px;
   flex-shrink: 0;
   border: 2px solid #ccc;
   border-radius: 10px;
   overflow: hidden;
   transform: translateX(-100px);
-  transform: translateY(30px);
+  transform: translateY(15px);
 }
 
 .contact-top {
