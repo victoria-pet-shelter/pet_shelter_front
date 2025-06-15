@@ -389,7 +389,6 @@
     text-decoration: none;
     text-transform: none;
     color: var(--home-text-color);
-    
   }
   
   .text-19 {
@@ -565,7 +564,6 @@
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
-    
   }
 
   .count {
