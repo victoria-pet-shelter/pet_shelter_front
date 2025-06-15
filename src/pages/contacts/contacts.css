@@ -200,6 +200,8 @@ img {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
+    align-items: center;
+    
 }
 
 .form {
@@ -217,12 +219,12 @@ img {
     left: 10px;
     top: 10px;
     padding: 10px;
-    width: 25%
+    width: 30%
 }
 
 .open-time {
     display: inline-block;
-    /* padding: 20px; */
+    padding: 20px;
     background-color: var(--square);
     font-size: 36px;
     color: #fff;
