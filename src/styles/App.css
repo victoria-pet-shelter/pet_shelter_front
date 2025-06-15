@@ -4,6 +4,7 @@
   --text-black: rgba(0, 0, 0, 0.5);
   --text-white: rgba(255, 255, 255, 1);
 }
+@import 'leaflet/dist/leaflet.css';
 
 .text-black {
   color: var(--text-black);

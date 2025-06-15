@@ -196,12 +196,11 @@ img {
     gap: 32px;
     padding-top: 50px;
     padding-bottom: 40px;
-    padding-left: 40px;
+    padding-left: 120px;
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
     align-items: center;
-    
 }
 
 .form {
@@ -219,7 +218,7 @@ img {
     left: 10px;
     top: 10px;
     padding: 10px;
-    width: 30%
+    width: 30%;
 }
 
 .open-time {
@@ -238,15 +237,6 @@ img {
     right: 10%;
     top: 50px;
     width: 30%;
-}
-
-.map-square {
-    width: 300px;
-    height: 200px;
-    background-color: #ccc;
-    position: absolute;
-    top: 100px;
-    right: 20%;
 }
 
 .contact .square-1 {
@@ -347,4 +337,72 @@ img {
     padding-top: 20px;
     padding-bottom: 10px;
     color: var(--contact-text-color);
+}
+
+.map-container {
+  width: 40%;
+  height: 300px;
+  min-width: 300px;
+  flex-shrink: 0;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  transform: translateX(-100px);
+  transform: translateY(30px);
+}
+
+.contact-top {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  padding: 50px 100px 0 40px;
+  justify-content: space-between;
+}
+
+.map-link {
+  font-family: var(--font-family-roboto);
+  font-size: 18px;
+  color: #0077cc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  margin-left: 6px;
+}
+
+.map-link > button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+}
+
+.map-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1ec7e5;
+  color: white;
+  font-family: var(--font-family-roboto);
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.map-button:hover {
+  background-color: #1565c0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.map-button:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.map-link:hover {
+  color: #004488;
+  text-decoration: underline;
 }
