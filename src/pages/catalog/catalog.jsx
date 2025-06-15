@@ -1,6 +1,7 @@
 import './catalog.css';
 import React, { useState, useEffect } from 'react';
 import useLocalStorage from 'use-local-storage';
+import { useNavigate } from 'react-router-dom';
 
 function Catalog() {
     const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -10,6 +11,8 @@ function Catalog() {
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
+
+    const navigate = useNavigate();
 
     const speciesMap = {
         Dog: 1,
@@ -21,6 +24,7 @@ function Catalog() {
         Farm: 7,
         Reptile: 8,
     };
+
     const formatAge = (months) => {
         if (!months || isNaN(months)) return null;
         if (months < 12) {
@@ -105,7 +109,7 @@ function Catalog() {
                         <p>Loading...</p>
                     ) : (
                         dbInfo.map(animal => (
-                            <div key={animal.id} className="pet-card">
+                            <div key={animal.id} className="pet-cards">
                                 <div className="pet-image-wrapper">
                                     <div className="species-label">
                                         {Object.entries(speciesMap).find(([key, value]) => value === animal.species_id)?.[0] || "?"}
@@ -133,10 +137,10 @@ function Catalog() {
                                         {animal.age != null && <span> • {formatAge(animal.age)}</span>}
                                     </div>
 
-                                    <div className="pet-bottom">
+                                    <div className="pet-bottoms">
                                         <span className="pet-price">{animal.cena ? `${animal.cena} €` : ""}</span>
-                                        <button className="pet-button" onClick={() => window.open(animal.external_url, '_blank')}>
-                                            To form
+                                        <button className="pet-button" onClick={() => navigate(`/pet/${animal.id}`)}>
+                                            To Anket
                                         </button>
                                     </div>
                                 </div>
