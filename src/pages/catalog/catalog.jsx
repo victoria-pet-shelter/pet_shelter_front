@@ -11,9 +11,26 @@ function Catalog() {
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
 
-    const fetchData = (page = 1) => {
+    const speciesMap = {
+        Dog: 1,
+        Cat: 2,
+        Exotic: 3,
+        Rodent: 4,
+        Bird: 5,
+        Fish: 6,
+        Farm: 7,
+        Reptile: 8,
+    };
+
+    const fetchData = (page = 1, species) => {
         setLoading(true);
-        fetch(`http://localhost:5000/pets?page=${page}&pageSize=25`)
+
+        let url = `http://localhost:5000/pets?page=${page}&pageSize=25`;
+        if (species && species !== 'All') {
+            url += `&speciesId=${speciesMap[species]}`;
+        }
+
+        fetch(url)
             .then(response => response.json())
             .then(data => {
                 setDbInfo(data.pets);
@@ -27,12 +44,15 @@ function Catalog() {
             });
     };
 
+
     useEffect(() => {
-        fetchData(currentPage);
-    }, [currentPage]);
+        fetchData(currentPage, selectedSpecies);
+    }, [currentPage, selectedSpecies]);
+
 
     const handleSpeciesSelect = (species) => {
         setSelectedSpecies(species);
+        setCurrentPage(1);
     };
 
     const handlePageChange = (direction) => {
@@ -43,9 +63,10 @@ function Catalog() {
         }
     };
 
-    const filteredAnimals = selectedSpecies === 'All'
-        ? dbInfo
-        : dbInfo.filter(animal => animal.species?.name?.toLowerCase() === selectedSpecies.toLowerCase());
+    useEffect(() => {
+        console.log("Received species ids:", dbInfo.map(a => a.species_id));
+    }, [dbInfo]);
+
 
     return (
         <div className="catalog" data-theme={theme}>
@@ -67,7 +88,7 @@ function Catalog() {
                     {loading ? (
                         <p>Loading...</p>
                     ) : (
-                        filteredAnimals.map(animal => (
+                        dbInfo.map(animal => (
                             <div key={animal.id} className="catalog-item">
                                 <img
                                     src={animal.mongo_image_id ? `http://localhost:5000/image/${animal.mongo_image_id}` : '/placeholder.jpg'}
@@ -77,6 +98,7 @@ function Catalog() {
                                 <div className="info-overlay">
                                     {animal.breed?.name && <span>{animal.breed.name}</span>}
                                     {animal.age != null && <span>{animal.breed?.name ? ', ' : ''}{animal.age} years old</span>}
+                                    {animal.cena && <span>{animal.cena} €</span>}
                                 </div>
 
                                 <button className="adopt-button" onClick={() => window.open(animal.external_url, '_blank')}>To form</button>

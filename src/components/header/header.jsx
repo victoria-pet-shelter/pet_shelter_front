@@ -22,7 +22,6 @@ function Header() {
                             <a href="/"><p class="nav-text"><span class="text-black">Home</span></p></a>
                             <a href="/catalog"><p class="nav-text"><span class="text-black">Catalog</span></p></a>
                             <a href="/#news"><p class="nav-text"><span class="text-black">News</span></p></a>
-                            <p class="nav-text"><span class="text-black">Gallery</span></p>
                             <a href="/#reviews"><p class="nav-text"><span class="text-black">Reviews</span></p></a>
                             <a href="/contact"><p class="nav-text"><span class="text-black">Contacts</span></p></a>
                             <div class="search">

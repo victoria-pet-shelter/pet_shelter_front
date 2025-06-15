@@ -447,3 +447,9 @@ body [data-theme='dark'] {
   box-shadow: 2px 2px 4px var(--shadow);
 }
 
+.info-overlay {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
