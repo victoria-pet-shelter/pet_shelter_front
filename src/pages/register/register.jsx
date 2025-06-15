@@ -1,7 +1,7 @@
 import "./register.css";
 import { useState } from "react";
 import squaresImage from "../../assets/log-reg/squares.svg";
-//import eyeImage from '../../assets/log-reg/eye.svg';
+// import eyeImage from '../../assets/log-reg/eye.svg';
 
 function Register() {
   const [formData, setFormData] = useState({

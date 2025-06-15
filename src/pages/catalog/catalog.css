@@ -455,7 +455,7 @@ body [data-theme='dark'] {
   white-space: normal;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 5; /* макс. 3 строки */
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
 }
 
