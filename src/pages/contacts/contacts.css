@@ -222,7 +222,7 @@ img {
 
 .open-time {
     display: inline-block;
-    padding: 20px;
+    /* padding: 20px; */
     background-color: var(--square);
     font-size: 36px;
     color: #fff;
