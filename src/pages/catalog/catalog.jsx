@@ -72,6 +72,11 @@ function Catalog() {
         <div className="catalog" data-theme={theme}>
             <title>Catalog</title>
 
+            <div className="decorations">
+                {[...Array(17)].map((_, i) => <div key={i} className={`square-${i + 1}`}></div>)}
+                {[...Array(5)].map((_, i) => <p key={i} className={`paws-${i + 1}`}>🐾</p>)}
+            </div>
+
             <div className="sidebar">
                 {['All', 'Dog', 'Cat', 'Bird', 'Exotic', 'Rodent', 'Fish', 'Farm', 'Reptile'].map((type, index) => (
                     <div className="sidebar-item" key={index} onClick={() => handleSpeciesSelect(type)}>
@@ -125,11 +130,6 @@ function Catalog() {
                             </div>
                         ))
                     )}
-                </div>
-
-                <div className="decorations">
-                    {[...Array(17)].map((_, i) => <div key={i} className={`square-${i + 1}`}></div>)}
-                    {[...Array(5)].map((_, i) => <p key={i} className={`paws-${i + 1}`}>🐾</p>)}
                 </div>
 
                 <div className="pagination">
