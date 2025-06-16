@@ -20,24 +20,28 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-        const response = await fetch("http://localhost:5000/login", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData),
-        });
+            const response = await fetch("http://localhost:5000/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
 
-        if (response.ok) {
-            // const exists = data.some(user => user.email === formData.email && user.password === formData.password);
-            
-            setMessage("User logged in successfully!");
-            await setTimeout(2000);
-            window.location.href = "/";
-            
-        } else {
-            setMessage("Error logging in user.");
-        }
+            if (response.ok) {
+                // const exists = data.some(user => user.email === formData.email && user.password === formData.password);
+
+                setMessage("User logged in successfully!");
+                await setTimeout(2000);
+                window.location.href = "/";
+                // Store the token in localStorage
+                // const token = response.headers.get("Authorization");
+                const result = await response.json();
+                localStorage.setItem("token", result.token);
+
+            } else {
+                setMessage("Error logging in user.");
+            }
         } catch (error) {
-        setMessage("Request failed: " + error);
+            setMessage("Request failed: " + error);
         }
     };
 
@@ -46,7 +50,7 @@ function Login() {
             <title>Login</title>
             <img src={squaresImage} className="squares" alt="Squares" />
             <div className="logo-group">
-                
+
             </div>
             <div className="login-form">
                 <div className="group-1">

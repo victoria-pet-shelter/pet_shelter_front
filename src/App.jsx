@@ -8,6 +8,7 @@ import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 import Catalog from "./pages/catalog/catalog";
 import PetCard from './components/petcard/pet_card';
+import UserProfile from "./components/userprofile/user_profile";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/" element={<Catalog />} />
         <Route path="/pet/:id" element={<PetCard />} />
+        <Route path="/profile" element={<UserProfile />} />
       </Routes>
       <hr />
       <Footer />
