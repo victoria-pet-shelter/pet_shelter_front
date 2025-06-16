@@ -1,10 +1,17 @@
 import './about.css';
 import gigachad from '../../assets/about/gigachad.jpg';
 import markImage from '../../assets/about/mark.jpg';
+import useLocalStorage from "use-local-storage";
 
 function About() {
+    const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const [theme, setTheme] = useLocalStorage(
+        "theme",
+        defaultDark ? "dark" : "light"
+    );
+
     return (
-        <div className="about">
+        <div className="about" data-theme={theme}>
             <title>About us</title>
             <div class="about-us">
                 <div class="about-us-history">
