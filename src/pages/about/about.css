@@ -15,12 +15,13 @@ body {
     overflow-x: hidden;
     --about-color-background: #e3f2fd;
     --about-color-element: #1edcf9;
-    --about-text-color: #000000;
+    --about-text-color: #000;
 }
 
-body.dark {
-    --about-color-background: #1e1e1e;
-    --about-color-element: #323232;
+body [data-theme='dark'] {
+    --about-color-background: #0c5183;
+    --about-color-element: #137787;
+    --about-text-color: #fff;
 }
   
 img {

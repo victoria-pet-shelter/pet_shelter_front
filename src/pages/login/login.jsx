@@ -4,6 +4,10 @@ import squaresImage from '../../assets/log-reg/squares.svg';
 // import eyeImage from '../../assets/log-reg/eye.svg';
 import useLocalStorage from 'use-local-storage';
 
+function WindowTimeOut() {
+    window.location.href = "/";
+}
+
 function Login() {
     const [formData, setFormData] = useState({ email: '', password: '' });
     const [message, setMessage] = useState('');
@@ -20,24 +24,29 @@ function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-        const response = await fetch("http://localhost:5000/login", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData),
-        });
+            const response = await fetch("http://localhost:5000/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
 
-        if (response.ok) {
-            // const exists = data.some(user => user.email === formData.email && user.password === formData.password);
-            
-            setMessage("User logged in successfully!");
-            await setTimeout(2000);
-            window.location.href = "/";
-            
-        } else {
-            setMessage("Error logging in user.");
-        }
+            if (response.ok) {
+                // const exists = data.some(user => user.email === formData.email && user.password === formData.password);
+
+                setMessage("User logged in successfully!");
+
+                // window.location.href = "/";
+
+                const data = await response.json();
+                localStorage.setItem("token", data.token);
+                await setTimeout(WindowTimeOut, 2000);
+            } else {
+                setMessage("Error logging in user.");
+                await setTimeout(WindowTimeOut, 2000);
+            }
         } catch (error) {
-        setMessage("Request failed: " + error);
+            setMessage("Request failed: " + error);
+            await setTimeout(WindowTimeOut, 2000);
         }
     };
 
@@ -46,7 +55,7 @@ function Login() {
             <title>Login</title>
             <img src={squaresImage} className="squares" alt="Squares" />
             <div className="logo-group">
-                
+
             </div>
             <div className="login-form">
                 <div className="group-1">

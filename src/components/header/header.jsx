@@ -1,34 +1,59 @@
 import './header.css';
 import logoIcon from '../../assets/header/logo.svg';
 import searchIcon from "../../assets/header/search.svg";
+import { Link } from "react-router-dom";
+import useLocalStorage from "use-local-storage";
+import { useEffect, useState } from "react";
+import profileIcon from "../../assets/header/profile_icon.png";
 
 function Header() {
-    return (
-        <div className="header">
-            <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <link href="https://fonts.googleapis.com/css?family=Roboto|Inter|Poppins&display=swap" rel="stylesheet" />
-            <link rel="icon" href="../../assets/header/logo-16.png" type="image/png" sizes="16x16" />
-            <link rel="icon" href="../../assets/header/logo-32.png" type="image/png" sizes="32x32" />
-            <link rel="icon" href="../../assets/header/logo-64.png" type="image/png" sizes="64x64" />
-            <link rel="shortcut icon" href="../../assets/logo/logo.ico" />
-            <div class="menubar">
-                <div class="top-bar">
-                    <div class="logo-circle">
-                        <img src={logoIcon} class="logo" alt="Logo" />
-                    </div>
-                    <p class="logo-text">Pet Adoption Center</p>
-                    <div class="navigation">
+    const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const [theme, setTheme] = useLocalStorage(
+        "theme",
+        defaultDark ? "dark" : "light"
+    );
 
-                        <a href="/"><p class="nav-text">Home</p></a>
-                        <a href="/catalog"><p class="nav-text">Catalog</p></a>
-                        <a href="/#news"><p class="nav-text">News</p></a>
-                        <a href="/#reviews"><p class="nav-text">Reviews</p></a>
-                        <a href="/contact"><p class="nav-text">Contacts</p></a>
-                        <div class="search">
-                            <p class="text-31">Search in site</p>
-                            <div class="search-ic">
-                                <img src={searchIcon} class="search-ic-img" alt="Search" />
+    const token = localStorage.getItem("token");
+    const [tokenExists, setTokenExists] = useState(false);
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        setTokenExists(!!token);
+        console.log("🔐 Token found:", token);
+    }, []);
+
+    return (
+        <div className="header" data-theme={theme}>
+            <div className="menubar">
+                <div className="top-bar">
+                    <div className="logo-circle">
+                        <img src={logoIcon} className="logo" alt="Logo" />
+                    </div>
+                    <p className="logo-text">Pet Adoption Center</p>
+                    <div className="navigation">
+                        <Link to="/"><p className="nav-text">Home</p></Link>
+                        <Link to="/catalog"><p className="nav-text">Catalog</p></Link>
+                        <a href="/#news"><p className="nav-text">News</p></a>
+                        <a href="/#reviews"><p className="nav-text">Reviews</p></a>
+                        <Link to="/contact"><p className="nav-text">Contacts</p></Link>
+
+                        {tokenExists ? (
+                            <>
+                                {console.log("✅ Rendering My Profile")}
+                                <Link to="/profile" className="nav-text">
+                                    <img src={profileIcon} alt="profile" className="profile-ic" />
+                                </Link>
+                            </>
+                        ) : (
+                            console.log("❌ No token, not showing My Profile")
+                        )}
+
+
+
+                        <div className="search">
+                            <p className="search-text">Search in site</p>
+                            <div className="search-ic">
+                                <img src={searchIcon} className="search-ic-img" alt="Search" />
                             </div>
                         </div>
                     </div>
