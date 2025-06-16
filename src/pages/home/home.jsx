@@ -32,22 +32,24 @@ function Home() {
       <div class="home">
         <title>Pet Shelter</title>
         <div class="news-frame">
-          <div class="site-title">Welcome to the Pet Center</div>
-          
-          <p class="site-subtitle">Every year, the following come to “Big<br />Homes”:</p>
-          <div class="count">
-            <div class="dogcount">
-              <p class="count-number">69</p>
-              <p class="count-animal">dogs</p>
+          <div class="news-frame-elements">
+            <div class="site-title">Welcome to the Pet Center</div>
+            
+            <p class="site-subtitle">Every year, the following come to “Big<br />Homes”:</p>
+            <div class="count">
+              <div class="dogcount">
+                <p class="count-number">69</p>
+                <p class="count-animal">dogs</p>
+              </div>
+              <div class="catcount">
+                <p class="count-number">420</p>
+                <p class="count-animal">cats</p>
+              </div>
             </div>
-            <div class="catcount">
-              <p class="count-number">420</p>
-              <p class="count-animal">cats</p>
+            <div class="button">
+              <a href="/register"><button class="secondary">Register</button></a>
+              <a href="/login"><button class="primary">Login</button></a>
             </div>
-          </div>
-          <div class="button">
-            <a href="/register"><button class="secondary">Register</button></a>
-            <a href="/login"><button class="primary">Login</button></a>
           </div>
           <img src={dogsImage} class="node-2" alt="Dogs" />
           

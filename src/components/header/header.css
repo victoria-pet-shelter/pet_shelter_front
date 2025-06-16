@@ -1,11 +1,19 @@
 body {
   --header-background-color: #1edcf9;
   --header-shadow: rgba(0, 0, 0, 0.5);
+  --header-active: #9abee4;
+  --header-text-color: #000;
+}
+
+body [data-theme='dark'] {
+  --header-background-color: #137787;
+  --header-shadow: rgba(255, 255, 255, 0.5);
+  --header-text-color: #fff;
 }
 
 .header {
   background-color: #111;
-  color: #fff;
+  color: var(--header-text-color);
   padding: 2px;
   text-align: left;
 }
@@ -24,7 +32,7 @@ body {
   text-decoration: underline;
 }
 .header nav a.active {
-  color: #9abee4;
+  color: var(--header-active);
 }
 
 .logo {
@@ -49,7 +57,7 @@ body {
   line-height: 36px;
   text-decoration: none;
   text-transform: none;
-  color: var(--text-black);
+  color: var(--header-text-color);
 }
 
 .top-bar {
@@ -72,4 +80,13 @@ body {
   flex-basis: auto;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 120px;
+}
+
+.header .navigation {
+  background-color: var(--header-background-color);
+}
+
+.search-text {
+  color: var(--header-shadow);
+  padding-right: 20px;
 }

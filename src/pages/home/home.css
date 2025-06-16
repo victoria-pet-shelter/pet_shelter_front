@@ -508,7 +508,6 @@
     text-decoration: none;
     text-transform: none;
     color: var(--home-text-color);
-    margin-top: -7.5%;
     position: relative;
     left: 10%;
   }
@@ -533,8 +532,6 @@
     text-decoration: none;
     text-transform: none;
     color: var(--home-text-color);
-    margin-left: -20%;
-    margin-bottom: -1%;
   }
   
   .count-number {
@@ -575,8 +572,7 @@
     align-items: center;
     gap: 64px;
     text-align: center;
-    margin-bottom: -5%;
-    margin-left: -10%;
+    padding-bottom: 20px;
   }
   
   .dogcount {
@@ -641,8 +637,6 @@
     flex-grow: 2;
     flex-shrink: 1;
     flex-basis: auto;
-    margin-bottom: -12.5%;
-    margin-left: -25%;
   }
   
   .node-3 {
@@ -658,7 +652,17 @@
     flex-basis: auto;
     background-color: var(--background-color);
     display: flex;
+    flex-direction: row;
     align-items: center;
+    gap: 35%;
+    padding-left: 20px;
+  }
+
+  .news-frame-elements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%
   }
   
   .logo-circle {
