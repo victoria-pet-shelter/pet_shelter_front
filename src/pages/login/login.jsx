@@ -4,6 +4,10 @@ import squaresImage from '../../assets/log-reg/squares.svg';
 // import eyeImage from '../../assets/log-reg/eye.svg';
 import useLocalStorage from 'use-local-storage';
 
+function WindowTimeOut() {
+    window.location.href = "/";
+}
+
 function Login() {
     const [formData, setFormData] = useState({ email: '', password: '' });
     const [message, setMessage] = useState('');
@@ -30,18 +34,19 @@ function Login() {
                 // const exists = data.some(user => user.email === formData.email && user.password === formData.password);
 
                 setMessage("User logged in successfully!");
-                await setTimeout(2000);
-                window.location.href = "/";
-                // Store the token in localStorage
-                // const token = response.headers.get("Authorization");
-                const result = await response.json();
-                localStorage.setItem("token", result.token);
 
+                // window.location.href = "/";
+
+                const data = await response.json();
+                localStorage.setItem("token", data.token);
+                await setTimeout(WindowTimeOut, 2000);
             } else {
                 setMessage("Error logging in user.");
+                await setTimeout(WindowTimeOut, 2000);
             }
         } catch (error) {
             setMessage("Request failed: " + error);
+            await setTimeout(WindowTimeOut, 2000);
         }
     };
 

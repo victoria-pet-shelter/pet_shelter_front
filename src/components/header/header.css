@@ -95,3 +95,13 @@ body [data-theme='dark'] {
   color: var(--header-shadow);
   padding-right: 20px;
 }
+
+.profile-ic {
+  width: 30px;
+  height: auto;
+  border-radius: 50%;
+  border: 2px solid var(--header-text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,57 @@
+.profile-container {
+    padding: 40px;
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: var(--font-family-roboto);
+}
+
+.profile-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--contact-text-color);
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile-form input,
+.profile-form select {
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    background-color: var(--input-color);
+}
+
+.save-button,
+.password-button {
+    padding: 10px 20px;
+    background-color: var(--square);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.2s ease;
+}
+
+.save-button:hover,
+.password-button:hover {
+    background-color: #0b788d;
+}
+
+.password-section {
+    margin-top: 30px;
+}
+
+.profile-container {
+    background-color: var(--element-color);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    max-width: 600px;
+    margin: 40px auto;
+    font-family: var(--font-family-roboto);
+}
