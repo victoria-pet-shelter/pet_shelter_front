@@ -107,7 +107,7 @@ function Catalog() {
             </div>
 
             {!isMobile ? (
-                <div className="sidebar">
+                <div className="sidebar fade-in">
                     {speciesList.map((type, index) => (
                         <div className="sidebar-item" key={index} onClick={() => handleSpeciesSelect(type)}>
                             <div className="sidebar-item-icon"><p>🐾</p></div>
@@ -117,10 +117,13 @@ function Catalog() {
                 </div>
             ) : (
                 <>
-                    <button className="filter-toggle" onClick={() => setShowFilter(true)}>☰ Filter</button>
+                    <button className={`filter-toggle ${showFilter ? 'hide' : ''} fade-in-up`} onClick={() => setShowFilter(true)}>
+                        ☰ Filter
+                    </button>
+
                     {showFilter && (
                         <>
-                            <div className="sidebar-popup open">
+                            <div className={`sidebar-popup ${showFilter ? 'open slide-in-right' : ''}`}>
                                 <div className="sidebar-header">
                                     <p>Category</p>
                                     <button onClick={() => setShowFilter(false)}>✖</button>
@@ -135,19 +138,20 @@ function Catalog() {
                                     </div>
                                 ))}
                             </div>
-                            <div className="sidebar-overlay" onClick={() => setShowFilter(false)}></div>
+                            <div className={`sidebar-overlay ${showFilter ? 'active fade-in' : ''}`} onClick={() => setShowFilter(false)}></div>
                         </>
                     )}
                 </>
             )}
-
-            <div className="catalog-content">
+            <div className={`catalog-content ${showFilter ? 'blur' : ''} fade-in`}>
                 <div className="catalog-items">
                     {loading ? (
-                        <p>Loading...</p>
+                        <p className="fade-in-up" style={{ fontSize: "24px", marginTop: "20px" }}>Loading pets...</p>
                     ) : (
-                        dbInfo.map(animal => (
-                            <div key={animal.id} className="pet-cards">
+
+                        dbInfo.map((animal, index) => (
+                            <div key={animal.id} className="pet-cards catalog-appear" style={{ animationDelay: `${index * 50}ms` }}>
+
                                 <div className="pet-image-wrapper">
                                     <div className="species-label">
                                         {Object.entries(speciesMap).find(([key, value]) => value === animal.species_id)?.[0] || "?"}
@@ -187,7 +191,7 @@ function Catalog() {
                     )}
                 </div>
 
-                <div className="pagination">
+                <div className="pagination fade-in-up">
                     <button disabled={currentPage === 1} onClick={() => handlePageChange('prev')}>Previous</button>
                     <span>Page {currentPage} of {totalPages}</span>
                     <button disabled={currentPage === totalPages} onClick={() => handlePageChange('next')}>Next</button>
