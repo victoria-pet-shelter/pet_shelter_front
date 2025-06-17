@@ -290,6 +290,9 @@ img {
         left: 10% !important;
         margin: 20px auto;
         text-align: center;
+        margin-right: 80rem;
+        left: 5% !important;
+        margin-bottom: 5rem
     }
 
     .alan-group,
@@ -322,6 +325,10 @@ img {
         font-size: 20px;
     }
 
+    .history {
+        padding-left: 10px;
+    }
+
     .history-body,
     .mission-body,
     .role {
@@ -336,6 +343,9 @@ img {
     .about-us .frame-1 {
         width: 90%;
         padding: 20px;
+        margin-right: 80rem;
+        left: 5% !important;
+        margin-bottom: 5rem;
     }
 
     .alan,
