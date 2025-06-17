@@ -41,7 +41,7 @@ function About() {
                         <div className="group">
                             <img src={markImage} className="mark" alt="Mark Korobkin" />
                             <p className="name">Mark Korobkin</p>
-                            <p className="role">Direktors</p>
+                            <p className="role">Baby mama</p>
                         </div>
                     </div>
                 </div>

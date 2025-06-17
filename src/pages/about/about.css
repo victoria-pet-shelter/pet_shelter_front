@@ -138,7 +138,13 @@ img {
     text-decoration: none;
     text-transform: none;
     color: var(--about-text-color);
-    padding-top: 1.5rem;
+}
+
+.mark-avatar .group .role {
+    margin: 1rem !important;
+    padding: 1.6rem !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
 }
 
 .group {
