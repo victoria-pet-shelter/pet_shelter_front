@@ -11,6 +11,8 @@ function Catalog() {
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
+    const [showFilter, setShowFilter] = useState(false);
+    const speciesList = ['All', 'Dog', 'Cat', 'Bird', 'Exotic', 'Rodent', 'Fish', 'Farm', 'Reptile'];
 
     const navigate = useNavigate();
 
@@ -84,6 +86,16 @@ function Catalog() {
         console.log("Received species ids:", dbInfo.map(a => a.species_id));
     }, [dbInfo]);
 
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
         <div className="catalog" data-theme={theme}>
@@ -94,14 +106,40 @@ function Catalog() {
                 {[...Array(5)].map((_, i) => <p key={i} className={`paws-${i + 1}`}>🐾</p>)}
             </div>
 
-            <div className="sidebar">
-                {['All', 'Dog', 'Cat', 'Bird', 'Exotic', 'Rodent', 'Fish', 'Farm', 'Reptile'].map((type, index) => (
-                    <div className="sidebar-item" key={index} onClick={() => handleSpeciesSelect(type)}>
-                        <div className="sidebar-item-icon"><p>🐾</p></div>
-                        <p className="sidebar-item-name">{type}</p>
-                    </div>
-                ))}
-            </div>
+            {!isMobile ? (
+                <div className="sidebar">
+                    {speciesList.map((type, index) => (
+                        <div className="sidebar-item" key={index} onClick={() => handleSpeciesSelect(type)}>
+                            <div className="sidebar-item-icon"><p>🐾</p></div>
+                            <p className="sidebar-item-name">{type}</p>
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <>
+                    <button className="filter-toggle" onClick={() => setShowFilter(true)}>☰ Filter</button>
+                    {showFilter && (
+                        <>
+                            <div className="sidebar-popup open">
+                                <div className="sidebar-header">
+                                    <p>Category</p>
+                                    <button onClick={() => setShowFilter(false)}>✖</button>
+                                </div>
+                                {speciesList.map((type, index) => (
+                                    <div className="sidebar-item" key={index} onClick={() => {
+                                        handleSpeciesSelect(type);
+                                        setShowFilter(false);
+                                    }}>
+                                        <div className="sidebar-item-icon"><p>🐾</p></div>
+                                        <p className="sidebar-item-name">{type}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="sidebar-overlay" onClick={() => setShowFilter(false)}></div>
+                        </>
+                    )}
+                </>
+            )}
 
             <div className="catalog-content">
                 <div className="catalog-items">
