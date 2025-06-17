@@ -3,7 +3,7 @@ import facebookLogo from '../../assets/footer/facebook.png';
 import twitterLogo from '../../assets/footer/twitter.png';
 import vimeoLogo from '../../assets/footer/vimeo.png';
 import useLocalStorage from 'use-local-storage';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // 🗺 Leaflet
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
@@ -23,6 +23,11 @@ function Contact() {
     const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
     const [formData, setFormData] = useState({ name: "", email: "", message: "" });
     const [status, setStatus] = useState("");
+    const [loaded, setLoaded] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => setLoaded(true), 50);
+    }, []);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -51,19 +56,20 @@ function Contact() {
 
     const mapCenter = [56.946285, 24.105078]; // Riga
 
+
+    useEffect(() => {
+        setTimeout(() => setLoaded(true), 50);
+    }, []);
+
     return (
-        <div className="contact" data-theme={theme}>
+        <div className={`contact ${loaded ? 'contact-visible' : ''}`} data-theme={theme}>
             <title>Contact us</title>
 
-            <div className="square-1"></div>
-            <div className="square-2"></div>
-            <div className="square-3"></div>
-            <div className="square-4"></div>
-            <div className="square-5"></div>
-            <div className="square-6"></div>
-            <div className="square-7"></div>
+            {[...Array(7)].map((_, i) => (
+                <div key={i} className={`square-${i + 1}`}></div>
+            ))}
 
-            <div className="contact-top">
+            <div className="contact-top fade-in delay-1">
                 <div className="info">
                     <p className="info-text">Address:<br />Latvia, Fontana iela 69-42</p>
                     <p className="info-text">Phone: +371 29 969 333</p>
@@ -86,11 +92,13 @@ function Contact() {
                     href="https://www.openstreetmap.org/?mlat=56.946285&mlon=24.105078#map=13/56.9463/24.1051"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="map-clickable">
+                    className="map-clickable"
+                >
                     <button className="map-button">Open in OpenStreetMap →</button>
                 </a>
             </div>
-            <div className="socials">
+
+            <div className="socials fade-in delay-2">
                 <a href="https://facebook.com"><img src={facebookLogo} className="logo" alt="Facebook" /></a>
                 <a href="https://vimeo.com"><img src={vimeoLogo} className="logo" alt="Vimeo" /></a>
                 <a href="https://x.com"><img src={twitterLogo} className="logo" alt="Twitter" /></a>
@@ -100,7 +108,7 @@ function Contact() {
             <p className="paws-2">🐾</p>
             <p className="paws-3">🐾</p>
 
-            <div className="contact-us">
+            <div className="contact-us fade-in delay-3">
                 <div className="form-titles">
                     <p className="form-title">Contact us</p>
                     <p className="form-subtitle">Have a question? Reach out to us</p>
@@ -124,7 +132,7 @@ function Contact() {
                 </form>
                 <hr className="divider" />
             </div>
-        </div >
+        </div>
     );
 }
 
