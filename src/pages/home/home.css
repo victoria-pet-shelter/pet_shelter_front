@@ -595,6 +595,8 @@ img {
   height: auto;
   position: relative;
   right: 20%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .site-subtitle {
@@ -1302,6 +1304,7 @@ img {
 
   .node-2 {
     width: 15rem;
+
   }
 
   .site-subtitle {
