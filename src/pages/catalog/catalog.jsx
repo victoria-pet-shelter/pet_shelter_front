@@ -11,6 +11,8 @@ function Catalog() {
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
+    const [showFilter, setShowFilter] = useState(false);
+    const speciesList = ['All', 'Dog', 'Cat', 'Bird', 'Exotic', 'Rodent', 'Fish', 'Farm', 'Reptile'];
 
     const navigate = useNavigate();
 
@@ -84,6 +86,16 @@ function Catalog() {
         console.log("Received species ids:", dbInfo.map(a => a.species_id));
     }, [dbInfo]);
 
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
         <div className="catalog" data-theme={theme}>
@@ -94,22 +106,52 @@ function Catalog() {
                 {[...Array(5)].map((_, i) => <p key={i} className={`paws-${i + 1}`}>🐾</p>)}
             </div>
 
-            <div className="sidebar">
-                {['All', 'Dog', 'Cat', 'Bird', 'Exotic', 'Rodent', 'Fish', 'Farm', 'Reptile'].map((type, index) => (
-                    <div className="sidebar-item" key={index} onClick={() => handleSpeciesSelect(type)}>
-                        <div className="sidebar-item-icon"><p>🐾</p></div>
-                        <p className="sidebar-item-name">{type}</p>
-                    </div>
-                ))}
-            </div>
+            {!isMobile ? (
+                <div className="sidebar fade-in">
+                    {speciesList.map((type, index) => (
+                        <div className="sidebar-item" key={index} onClick={() => handleSpeciesSelect(type)}>
+                            <div className="sidebar-item-icon"><p>🐾</p></div>
+                            <p className="sidebar-item-name">{type}</p>
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <>
+                    <button className={`filter-toggle ${showFilter ? 'hide' : ''} fade-in-up`} onClick={() => setShowFilter(true)}>
+                        ☰ Filter
+                    </button>
 
-            <div className="catalog-content">
+                    {showFilter && (
+                        <>
+                            <div className={`sidebar-popup ${showFilter ? 'open slide-in-right' : ''}`}>
+                                <div className="sidebar-header">
+                                    <p>Category</p>
+                                    <button onClick={() => setShowFilter(false)}>✖</button>
+                                </div>
+                                {speciesList.map((type, index) => (
+                                    <div className="sidebar-item" key={index} onClick={() => {
+                                        handleSpeciesSelect(type);
+                                        setShowFilter(false);
+                                    }}>
+                                        <div className="sidebar-item-icon"><p>🐾</p></div>
+                                        <p className="sidebar-item-name">{type}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className={`sidebar-overlay ${showFilter ? 'active fade-in' : ''}`} onClick={() => setShowFilter(false)}></div>
+                        </>
+                    )}
+                </>
+            )}
+            <div className={`catalog-content ${showFilter ? 'blur' : ''} fade-in`}>
                 <div className="catalog-items">
                     {loading ? (
-                        <p>Loading...</p>
+                        <p className="fade-in-up" style={{ fontSize: "24px", marginTop: "20px" }}>Loading pets...</p>
                     ) : (
-                        dbInfo.map(animal => (
-                            <div key={animal.id} className="pet-cards">
+
+                        dbInfo.map((animal, index) => (
+                            <div key={animal.id} className="pet-cards catalog-appear" style={{ animationDelay: `${index * 50}ms` }}>
+
                                 <div className="pet-image-wrapper">
                                     <div className="species-label">
                                         {Object.entries(speciesMap).find(([key, value]) => value === animal.species_id)?.[0] || "?"}
@@ -149,7 +191,7 @@ function Catalog() {
                     )}
                 </div>
 
-                <div className="pagination">
+                <div className="pagination fade-in-up">
                     <button disabled={currentPage === 1} onClick={() => handlePageChange('prev')}>Previous</button>
                     <span>Page {currentPage} of {totalPages}</span>
                     <button disabled={currentPage === totalPages} onClick={() => handlePageChange('next')}>Next</button>

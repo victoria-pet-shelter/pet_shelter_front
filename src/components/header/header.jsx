@@ -15,6 +15,15 @@ function Header() {
 
     const token = localStorage.getItem("token");
     const [tokenExists, setTokenExists] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(prev => !prev);
+    };
+
+    const closeMenu = () => {
+        setMenuOpen(false);
+    };
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -30,25 +39,27 @@ function Header() {
                         <img src={logoIcon} className="logo" alt="Logo" />
                     </div>
                     <p className="logo-text">Pet Adoption Center</p>
-                    <div className="navigation">
-                        <Link to="/"><p className="nav-text">Home</p></Link>
-                        <Link to="/catalog"><p className="nav-text">Catalog</p></Link>
-                        <a href="/#news"><p className="nav-text">News</p></a>
-                        <a href="/#reviews"><p className="nav-text">Reviews</p></a>
-                        <Link to="/contact"><p className="nav-text">Contacts</p></Link>
+
+                    <button className="burger" onClick={toggleMenu}>☰</button>
+
+                    <div className={`navigation ${menuOpen ? "open" : ""}`}>
+
+                        <Link to="/" onClick={closeMenu}><p className="nav-text">Home</p></Link>
+                        <Link to="/catalog" onClick={closeMenu}><p className="nav-text">Catalog</p></Link>
+                        <a href="/#news" onClick={closeMenu}><p className="nav-text">News</p></a>
+                        <a href="/#reviews" onClick={closeMenu}><p className="nav-text">Reviews</p></a>
+                        <Link to="/contact" onClick={closeMenu}><p className="nav-text">Contacts</p></Link>
 
                         {tokenExists ? (
                             <>
                                 {console.log("✅ Rendering My Profile")}
                                 <Link to="/profile" className="nav-text">
-                                    <img src={profileIcon} alt="profile" className="profile-ic" />
+                                    <img src={profileIcon} alt="profile" className="profile-ic" onClick={closeMenu} />
                                 </Link>
                             </>
                         ) : (
                             console.log("❌ No token, not showing My Profile")
                         )}
-
-
 
                         <div className="search">
                             <p className="search-text">Search in site</p>
@@ -59,6 +70,7 @@ function Header() {
                     </div>
                 </div>
             </div>
+            {menuOpen && <div className="overlay" onClick={closeMenu}></div>}
         </div>
     );
 }

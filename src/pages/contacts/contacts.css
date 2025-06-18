@@ -119,6 +119,7 @@ img {
     flex-basis: auto;
     width: 90%;
     padding-left: 80px;
+    margin-top: 1rem;
 }
 
 .form-button {
@@ -138,17 +139,18 @@ img {
     border-radius: 6px;
     padding: 10px;
     margin-left: 80px;
+    margin-bottom: 1rem;
 }
 
 .form-button:hover {
-  background-color: rgb(54, 54, 54);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: rgb(54, 54, 54);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .form-button:active {
-  transform: scale(0.98);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .divider {
@@ -215,6 +217,7 @@ img {
     flex-shrink: 1;
     flex-basis: auto;
     align-items: center;
+    position: relative;
 }
 
 .form {
@@ -231,8 +234,11 @@ img {
     position: relative;
     left: 10px;
     top: 10px;
-    padding: 10px;
+    padding: 10px 10px 20px 10px;
     width: 30%;
+    height: 100%;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .open-time {
@@ -243,7 +249,8 @@ img {
     color: #fff;
     width: calc(100% + 20px);
     margin-left: -10px;
-    margin-bottom: -10px;
+    margin-bottom: -20px;
+    padding: 2rem;
 }
 
 .map {
@@ -354,69 +361,186 @@ img {
 }
 
 .map-container {
-  width: 40%;
-  height: 320px;
-  min-width: 300px;
-  flex-shrink: 0;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  overflow: hidden;
-  transform: translateX(-100px);
-  transform: translateY(15px);
+    width: 40%;
+    height: 320px;
+    min-width: 300px;
+    flex-shrink: 0;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    transform: translateX(-100px);
+    transform: translateY(15px);
 }
 
 .contact-top {
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-  padding: 50px 100px 0 40px;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    padding: 50px 100px 0 40px;
+    justify-content: space-between;
 }
 
 .map-link {
-  font-family: var(--font-family-roboto);
-  font-size: 18px;
-  color: #0077cc;
-  text-decoration: none;
-  transition: color 0.2s ease;
-  margin-left: 6px;
+    font-family: var(--font-family-roboto);
+    font-size: 18px;
+    color: #0077cc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    margin-left: 6px;
 }
 
-.map-link > button {
-  background: none;
-  border: none;
-  padding: 0;
-  color: inherit;
-  cursor: pointer;
+.map-link>button {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+    cursor: pointer;
 }
 
 .map-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: black;
-  color: white;
-  font-family: var(--font-family-roboto);
-  font-size: 16px;
-  font-weight: 500;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    font-family: var(--font-family-roboto);
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .map-button:hover {
-  background-color: rgb(54, 54, 54);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: rgb(54, 54, 54);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .map-button:active {
-  transform: scale(0.98);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
 .map-link:hover {
-  color: #004488;
-  text-decoration: underline;
+    color: #004488;
+    text-decoration: underline;
+}
+
+.map-clickable {
+    cursor: pointer;
+    transition: transform 0.6s ease;
+    height: 100%;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    /* position: relative; */
+    margin-top: 20rem;
+    /* margin-right: 20rem; */
+}
+
+.contact-visible .fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.delay-1 {
+    transition-delay: 0.6s;
+}
+
+.delay-2 {
+    transition-delay: 0.1s;
+}
+
+.delay-3 {
+    transition-delay: 1.6s;
+}
+
+@media (max-width: 1024px) {
+    .contact-top {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .info,
+    .map-container {
+        width: 90%;
+        margin: 0;
+        left: 0;
+        top: 0;
+        position: static;
+    }
+
+    .form {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .form-group {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .form-button {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .form-titles {
+        padding: 60px 20px 40px 20px;
+    }
+
+    .socials {
+        padding: 20px;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .map-clickable {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-title {
+        font-size: 36px;
+    }
+
+    .form-subtitle {
+        font-size: 18px;
+    }
+
+    .open-time {
+        font-size: 24px;
+        padding: 1rem;
+    }
+
+    .map-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .socials img.logo {
+        width: 20px;
+    }
+
+    .form-button {
+        font-size: 18px;
+        padding: 8px;
+    }
+
+    .contact-us {
+        flex-direction: column;
+        padding: 20px;
+    }
 }
