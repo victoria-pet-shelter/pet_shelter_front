@@ -201,7 +201,7 @@ img {
     font-size: 2rem;
     margin-bottom: 2vh;
     cursor: pointer;
-  }
+}
 
 .squares {
     float: right;
@@ -235,4 +235,12 @@ img {
 
 .login .input-label {
     color: var(--login-text);
+}
+
+.eye {
+    width: 24px;
+    height: 24px;
+    margin-right: 6rem;
+    margin-top: -2.5rem;
+    cursor: pointer;
 }
