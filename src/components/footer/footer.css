@@ -148,3 +148,29 @@ body [data-theme='dark'] {
 .footer-text {
   color: var(--footer-text-color);
 }
+
+.theme-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-right: 10px;
+  position: absolute;
+  padding-right: 90rem;
+}
+
+.theme-icon {
+  width: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .theme-button {
+    padding-right: 55rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .theme-button {
+    padding-right: 35rem;
+  }
+}
