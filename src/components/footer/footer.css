@@ -155,8 +155,8 @@ body [data-theme='dark'] {
   padding: 0;
   cursor: pointer;
   margin-right: 10px;
-  position: absolute;
-  padding-right: 90rem;
+  /* position: absolute; */
+  /* padding-right: 90rem; */
 }
 
 .theme-icon {
